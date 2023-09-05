@@ -1,0 +1,14 @@
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
+@import "../styles/globals.scss";
+
+.header {
+  background-color: white;
+  align-items: center;
+  width: 100%;
+  align-items: flex-start;
+  display: inline-grid;
+  .menuButton{
+      color: $font;
+  }
+}

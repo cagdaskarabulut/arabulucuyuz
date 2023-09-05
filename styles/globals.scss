@@ -1,0 +1,9 @@
+@import "./colors.scss";
+@import "./mixins.scss";
+
+.logoStyle{
+  color: $main;
+  // font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: cursive;
+}
+

@@ -1,0 +1,21 @@
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
+
+.menuPanelStyle {
+  background-color: $primary;
+  // background-image: url('../public/images/hands.png');
+  // height: 10vh; // min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  @include tablet-or-less {
+    align-items: flex-start;
+    width: 100%;
+    display: inline-grid;
+  }
+}
+
+.menuStyle{
+  width: 100%;
+}

@@ -1,0 +1,8 @@
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
+
+.indexStyle{
+  background-color: white;
+  color: $font;
+  font-family : Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
