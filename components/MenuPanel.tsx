@@ -23,8 +23,8 @@ export default function Menu() {
           justifyContent: "space-between",
           marginTop: 2,
           marginBottom: 2,
-          marginLeft: 2,
-          marginRight: 2,
+          marginLeft: 10,
+          marginRight: 10,
           width: "100%",
           overflowX: "scroll",
           button: {
