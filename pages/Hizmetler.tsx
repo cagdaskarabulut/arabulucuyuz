@@ -1,7 +1,4 @@
-import styles from "./index.module.scss";
-import Head from "next/head";
-import { Inter } from "next/font/google";
-import Link from "next/link";
+import styles from "./Hizmetler.module.scss";
 import { Box, Button, Chip, Container, Grid } from "@mui/material";
 import MetaPanel from "../components/MetaPanel";
 import Header from "../components/Header";
@@ -10,12 +7,12 @@ import { useCallback, useContext, useEffect, useState } from "react";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 import useWindowSize from "@rooks/use-window-size";
 import HeaderMobile from "@/components/HeaderMobile";
-import SliderPanel from "@/components/SliderPanel";
+import SliderPanel from "@/components/Arabuluculuk";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
 
 //-Makaleler sayfası
-export default function Makaleler() {
+export default function Hizmetler() {
   
   const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
@@ -58,7 +55,19 @@ export default function Makaleler() {
       <MetaPanel/>
       <HeaderField />
       <MenuField />
-      <p>Makaleler</p>
+      <div className={styles.hizmetlerStyle}>
+        <ul>
+          <li>İŞÇİ İŞVEREN UYUŞMAZLIKLARINDA ARABULUCULUK</li>
+<li>TİCARİ UYUŞMAZLIKLARDA ARABULUCULUK</li>
+<li>TÜKETİCİ UYUŞMAZLIKLARINDA ARABULUCULUK</li>
+<li>TARIMSAL ÜRETİM SÖZLEŞMESİNDEN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK</li>
+<li>KİRA HUKUKU ANLAŞMAZLIKLARINDAN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK</li>
+        </ul>
+        
+      </div>
+      
+      
+
       <FooterPanel />
     </div>
   );

@@ -1,12 +1,15 @@
 import styles from "./MenuPanel.module.scss";
 import { Box, Button, Chip, Container, Grid } from "@mui/material";
-import Link from "next/link";
+import Link from "next/link"; 
 import React from "react";
+import { useRouter } from "next/router";
 
 export default function Menu() {
   function handleMainPageClick() {
     return "";
   }
+
+  const router = useRouter();
 
   return (
     <Container
@@ -29,14 +32,40 @@ export default function Menu() {
           },
         }}
       >
-        <Button href={"/"} variant="contained">Hizmetlerimiz</Button>
-        <Button href={"/Sorular"} variant="outlined">Sık sorulanlar</Button>
-        <Button href={"/Makaleler"} variant="outlined">Makaleler</Button>
-        <Button href={"/UcretHesaplama"} variant="outlined">Ücret hesaplama</Button>
-        <Button href={"/Duyurular"} variant="outlined">Duyurular</Button>
-        <Button href={"/BenKimim"} variant="outlined">Ben kimim</Button>
-        <Button href={"/Dosyalarim"} variant="outlined" disabled>Dosyalarım</Button>
-        <Button href={"/Formlar"} variant="outlined" disabled>Formlar</Button>
+        <Button href={"/"} 
+        className={router.pathname == "/" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}
+        >
+          Arabuluculuk
+        </Button>
+        <Button href={"/Sorular"} 
+        className={router.pathname == "/Sorular" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}
+        >
+          Sık sorulanlar
+        </Button>
+        <Button href={"/Hizmetler"} 
+        className={router.pathname == "/Hizmetler" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          Hizmetlerimiz
+        </Button>
+        {/* <Button href={"/UcretHesaplama"} 
+        className={router.pathname == "/UcretHesaplama" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          Ücret hesaplama
+        </Button> */}
+        {/* <Button href={"/Duyurular"} 
+        className={router.pathname == "/Duyurular" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          Duyurular
+        </Button> */}
+        <Button href={"/BenKimim"} 
+        className={router.pathname == "/BenKimim" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          Ben kimim
+        </Button>
+        {/* <Button href={"/Dosyalarim"} 
+        className={router.pathname == "/Dosyalarim" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          Dosyalarım
+        </Button>
+        <Button href={"/Formlar"} 
+        className={router.pathname == "/Formlar" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          Formlar
+        </Button> */}
       </Box>
     </Container>
   );

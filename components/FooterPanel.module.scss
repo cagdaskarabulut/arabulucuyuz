@@ -1,10 +1,17 @@
 @import "../styles/mixins.scss";
 @import "../styles/colors.scss";
+@import "../styles/globals.scss";
 
 .footerStyle {
   background-color: $white-hover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+
+  .arabuluculukStyle {
+    display: flex;
+
+  padding: 30px;
+  @include tablet-or-less {
+    padding: 10px;
+  }
+  }
 }
+

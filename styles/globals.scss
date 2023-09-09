@@ -1,9 +1,25 @@
 @import "./colors.scss";
 @import "./mixins.scss";
 
+.indexStyle{
+  background-color: white;
+  color: $font;
+  font-family: 'Times New Roman';
+  font-size: 12px;
+
+:global {
+  .MuiChip-label {
+    font-family: 'Times New Roman' !important;
+    font-size: 12px;
+  }
+}
+
+}
+
 .logoStyle{
   color: $main;
-  // font-family :Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-family: cursive;
 }
+
+
 

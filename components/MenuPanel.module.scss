@@ -1,17 +1,41 @@
 @import "../styles/mixins.scss";
 @import "../styles/colors.scss";
+@import "../styles/globals.scss";
 
 .menuPanelStyle {
   background-color: $primary;
-  // background-image: url('../public/images/hands.png');
-  // height: 10vh; // min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
+
   @include tablet-or-less {
     align-items: flex-start;
     width: 100%;
     display: inline-grid;
+  }
+
+  .menuButtonStyle,
+  .menuButtonStyleSelected {
+    font-family: 'Times New Roman' !important;
+    font-size: 12px;
+    color: $font;
+    border: none;
+    background: linear-gradient(90deg, $main, $main);
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: background-size 300ms ease;
+
+    &:hover {
+      background-size: 100% 3px;
+      color: $main;
+    }
+  }
+
+  .menuButtonStyleSelected {
+    color: $main;
+    background-size: 100% 3px;
+
   }
 }
