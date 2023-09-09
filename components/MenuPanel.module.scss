@@ -3,39 +3,39 @@
 @import "../styles/globals.scss";
 
 .menuPanelStyle {
-  background-color: $primary;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
+  background-color: $primary !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
 
   @include tablet-or-less {
-    align-items: flex-start;
-    width: 100%;
-    display: inline-grid;
+    align-items: flex-start !important;
+    width: 100% !important;
+    display: inline-grid !important;
   }
 
   .menuButtonStyle,
   .menuButtonStyleSelected {
     font-family: 'Times New Roman' !important;
-    font-size: 12px;
-    color: $font;
-    border: none;
-    background: linear-gradient(90deg, $main, $main);
-    background-size: 0% 3px;
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    transition: background-size 300ms ease;
+    font-size: 12px !important;
+    color: $font !important;
+    border: none !important;
+    background: linear-gradient(90deg, $main, $main) !important;
+    background-size: 0% 3px !important;
+    background-repeat: no-repeat !important;
+    background-position: left bottom !important;
+    transition: background-size 300ms ease !important;
 
     &:hover {
-      background-size: 100% 3px;
-      color: $main;
+      background-size: 100% 3px !important;
+      color: $main !important;
     }
   }
 
   .menuButtonStyleSelected {
-    color: $main;
-    background-size: 100% 3px;
+    color: $main !important;
+    background-size: 100% 3px !important;
 
   }
 }
