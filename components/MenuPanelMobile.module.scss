@@ -4,24 +4,10 @@
 
 .menuPanelStyle {
   background-color: $primary !important;
-  // justify-content: center !important;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // width: 100%;
-  // box-sizing: unset !important;
-
-  // @include tablet-or-less {
-  //   padding: 0px;
-  //   align-items: flex-start;
-  //   width: 100%;
-  //   display: inline-grid;
-  // }
   display: block !important;
-  // justify-content: stretch !important;
   justify-content: space-around !important;
 }
 
 .menuFont{
-  color: $font;
+  color: $font !important;
 }
