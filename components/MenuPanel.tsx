@@ -5,9 +5,6 @@ import React from "react";
 import { useRouter } from "next/router";
 
 export default function Menu() {
-  function handleMainPageClick() {
-    return "";
-  }
 
   const router = useRouter();
 
@@ -46,10 +43,10 @@ export default function Menu() {
         className={router.pathname == "/Hizmetler" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Hizmetlerimiz
         </Button>
-        {/* <Button href={"/UcretHesaplama"} 
+        <Button href={"/UcretHesaplama"} 
         className={router.pathname == "/UcretHesaplama" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Ücret hesaplama
-        </Button> */}
+        </Button>
         {/* <Button href={"/Duyurular"} 
         className={router.pathname == "/Duyurular" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Duyurular

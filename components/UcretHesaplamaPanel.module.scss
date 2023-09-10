@@ -1,0 +1,35 @@
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
+@import "../styles/globals.scss";
+
+.ucretHesaplamaPanelStyle {
+  background-color: white;
+  padding: 30px;
+
+  @include tablet-or-less {
+    padding: 10px;
+  }
+}
+
+.tipMenu {
+  font-size: 12px !important;
+  font-family: "Times New Roman" !important;
+}
+
+.tipMenu input {
+  font-size: 12px !important;
+  font-family: "Times New Roman" !important;
+}
+
+.pageButtonStyle {
+  font-family: 'Times New Roman' !important;
+  font-size: 12px !important;
+  color: white !important;
+  background-color: $green;
+  font-weight: bold;
+
+  &:hover {
+    color: white !important;
+    background-color: $green-hover !important;
+  }
+}

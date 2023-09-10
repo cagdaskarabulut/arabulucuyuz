@@ -104,6 +104,9 @@ function MenuPanelMobile() {
                 <MenuItem key="Hizmetler" onClick={()=>handleNavMenu("Hizmetler")}>
                   <Typography textAlign="center">Hizmetler</Typography>
                 </MenuItem>
+                <MenuItem key="UcretHesaplama" onClick={()=>handleNavMenu("UcretHesaplama")}>
+                  <Typography textAlign="center">Ücret hesaplama</Typography>
+                </MenuItem>
                 <MenuItem key="BenKimim" onClick={()=>handleNavMenu("BenKimim")}>
                   <Typography textAlign="center">BenKimim</Typography>
                 </MenuItem>

@@ -12,6 +12,7 @@ import useWindowSize from "@rooks/use-window-size";
 import SliderPanel from "@/components/Arabuluculuk";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
+import UcretHesaplamaPanel from "@/components/UcretHesaplamaPanel";
 
 //-UcretHesaplama sayfası
 export default function UcretHesaplama() {
@@ -55,7 +56,7 @@ export default function UcretHesaplama() {
       <MetaPanel/>
       <HeaderField />
       <MenuField />
-      <p>UcretHesaplama</p>
+      <UcretHesaplamaPanel/>
       <FooterPanel />
     </div>
   );
