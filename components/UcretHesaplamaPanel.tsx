@@ -142,7 +142,7 @@ export default function UcretHesaplamaPanel() {
             <span style={{ fontWeight: "bold" }}>Anlaşmaya Varılan Ücret</span>
           </Grid>
           <Grid item xs={12}>
-            <TextField className={styles.tipMenu} variant="standard" value={anlasilanUcret} onChange={handleAnlasilanUcretChange}/>
+            <TextField className={styles.tipMenu} variant="standard" value={anlasilanUcret} onChange={()=>handleAnlasilanUcretChange}/>
           </Grid>
           <br />
           <br />
