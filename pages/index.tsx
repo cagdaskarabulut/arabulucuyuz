@@ -5,7 +5,6 @@ import MenuPanel from "../components/MenuPanel";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 import useWindowSize from "@rooks/use-window-size";
-import HeaderMobile from "@/components/HeaderMobile";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
 import Arabuluculuk from "@/components/Arabuluculuk";
@@ -26,7 +25,7 @@ export default function Home() {
 
   const HeaderField = () => {
     if (isMobile) {
-      return <HeaderMobile />;
+      return <></>;
     } else {
       return <Header />;
     }

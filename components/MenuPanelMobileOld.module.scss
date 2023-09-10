@@ -1,0 +1,23 @@
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
+@import "../styles/globals.scss";
+
+.menuPanelStyle {
+  background-color: $primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 30px;
+
+  @include tablet-or-less {
+    padding: 0px;
+    align-items: flex-start;
+    width: 100%;
+    display: inline-grid;
+  }
+}
+
+.menuStyle {
+  width: 100%;
+}

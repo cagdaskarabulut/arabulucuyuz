@@ -31,9 +31,7 @@ export default function UcretHesaplama() {
 
   const HeaderField = () => {
     if (isMobile) {
-      return (
-        <HeaderMobile />
-      );
+      return <></>;
     } else {
       return (
         <Header />

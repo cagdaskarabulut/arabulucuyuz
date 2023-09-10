@@ -2,16 +2,6 @@
 @import "../styles/colors.scss";
 @import "../styles/globals.scss";
 
-// .header {
-//   background-color: white;
-//   align-items: center;
-//   @include tablet-or-less {
-//     align-items: flex-start;
-//     width: 100%;
-//     display: inline-grid;
-//   }
-// }
-
 .header {
   background-color: white;
   align-items: center;
@@ -21,6 +11,5 @@
   .menuButton{
       color: $font;
   }
-  
 }
 

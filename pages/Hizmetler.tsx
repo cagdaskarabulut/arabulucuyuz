@@ -6,7 +6,6 @@ import MenuPanel from "../components/MenuPanel";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 import useWindowSize from "@rooks/use-window-size";
-import HeaderMobile from "@/components/HeaderMobile";
 import SliderPanel from "@/components/Arabuluculuk";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
@@ -28,9 +27,7 @@ export default function Hizmetler() {
 
   const HeaderField = () => {
     if (isMobile) {
-      return (
-        <HeaderMobile />
-      );
+      return <></>;
     } else {
       return (
         <Header />
