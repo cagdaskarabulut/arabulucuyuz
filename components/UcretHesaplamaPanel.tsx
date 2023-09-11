@@ -1,55 +1,184 @@
-import React, { Component } from "react";
-import Image from "next/image";
+import React, { ChangeEvent } from "react";
 import styles from "./UcretHesaplamaPanel.module.scss";
 import {
-  Box,
   Button,
-  FormControl,
-  FormControlLabel,
   Grid,
-  InputLabel,
   MenuItem,
   Select,
   SelectChangeEvent,
-  Switch,
   TextField,
 } from "@mui/material";
-import { useCallback, useContext, useEffect, useState } from "react";
-import { Label } from "@mui/icons-material";
-import { NumberInput } from "@mui/base/Unstable_NumberInput/NumberInput";
+import { useState } from "react";
+
 export default function UcretHesaplamaPanel() {
   const [tip, setTip] = useState("1");
   const [arabulucuSayisi, setArabulucuSayisi] = useState("1");
   const [tarafSayisi, setTarafSayisi] = useState("2");
   const [anlasilanUcret, setAnlasilanUcret] = useState("0");
-  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] = useState(0);
+  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] = useState("0");
+  
   const handleChange = (event: SelectChangeEvent) => {
     setTip(event.target.value as string);
+    setArabulucuyaOdenecekMiktar("0");
   };
 
   const handleArabulucuSayisiChange = (event: SelectChangeEvent) => {
     setArabulucuSayisi(event.target.value as string);
+    setArabulucuyaOdenecekMiktar("0");
   };
 
   const handleTarafSayisiChange = (event: SelectChangeEvent) => {
     setTarafSayisi(event.target.value as string);
+    setArabulucuyaOdenecekMiktar("0");
   };
 
-  const handleAnlasilanUcretChange = (event: SelectChangeEvent) => {
+  const handleAnlasilanUcretChange = (event: ChangeEvent) => {
     setAnlasilanUcret(event.target.value as string);
+    setArabulucuyaOdenecekMiktar("0");
   };
+
+  const anlasilanUcretUzerindenArabulucuOdemesiBul = () => {
+    try {
+    let aktifAnlasilanUcretKalan = (!isNaN(+anlasilanUcret) ? Number(anlasilanUcret) : 0);
+    let sonuc = 0;
+    let oran = 0;
+    if (aktifAnlasilanUcretKalan > 0) {
+      oran = arabulucuSayisi == "1" ? 6 : 9;
+      if (aktifAnlasilanUcretKalan > 100000) {
+        sonuc = (100000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 100000;
+      } else {
+        sonuc = (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 5 : 7.5;
+      if (aktifAnlasilanUcretKalan > 160000) {
+        sonuc = sonuc + (160000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 160000;
+      } else {
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 4 : 6;
+      if (aktifAnlasilanUcretKalan > 260000) {
+        sonuc = sonuc + (260000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 260000;
+      } else {
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 3 : 4.5;
+      if (aktifAnlasilanUcretKalan > 520000) {
+        sonuc = sonuc + (520000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 520000;
+      } else {
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 2 : 3;
+      if (aktifAnlasilanUcretKalan > 1560000) {
+        sonuc = sonuc + (1560000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 1560000;
+      } else {
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 1.5 : 2.5;
+      if (aktifAnlasilanUcretKalan > 2080000) {
+        sonuc = sonuc + (2080000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 2080000;
+      } else {
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 1 : 1.5;
+      if (aktifAnlasilanUcretKalan > 4160000) {
+        sonuc = sonuc + (4160000 * oran) / 100;
+        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 4160000;
+      } else {
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+
+      oran = arabulucuSayisi == "1" ? 0.5 : 1;
+      if (aktifAnlasilanUcretKalan > 0) {
+        //8840000
+        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+        aktifAnlasilanUcretKalan = 0;
+      }
+    }
+    return sonuc;
+  } catch (error) {
+    return 0;
+  }
+  };
+
   
   const handleHesapla = () => {
-    let aktifAnlasilanUcretKalan = anlasilanUcret;
-    if (tip==="1"){//İş Hukuku Uyuşmazlıkları 2023
+    // setArabulucuyaOdenecekMiktar('0');
+    let sonuc = anlasilanUcretUzerindenArabulucuOdemesiBul();
 
-    } else if (tip==="2"){//Ticari Uyuşmazlıklar 2023
-
-    } else if (tip==="3"){//Tüketici Uyuşmazlıklar 2023
-
+    if(sonuc>0){
+      if (tip == "1") {
+        //İş Hukuku Uyuşmazlıkları 2023
+        if (tarafSayisi == "2" && sonuc < 1600) {
+          sonuc = 1600;
+        } else if (tarafSayisi == "3" && sonuc < 1680) {
+          sonuc = 1680;
+        } else if (tarafSayisi == "6" && sonuc < 1800) {
+          sonuc = 1800;
+        } else if (tarafSayisi == "11" && sonuc < 1920) {
+          sonuc = 1920;
+        }
+      } else if (tip == "2") {
+        //Ticari Uyuşmazlıklar 2023
+        if (tarafSayisi == "2" && sonuc < 3120) {
+          sonuc = 3120;
+        } else if (tarafSayisi == "3" && sonuc < 3200) {
+          sonuc = 3200;
+        } else if (tarafSayisi == "6" && sonuc < 3280) {
+          sonuc = 3280;
+        } else if (tarafSayisi == "11" && sonuc < 3360) {
+          sonuc = 3360;
+        }
+      } else if (tip == "3") {
+        //Tüketici Uyuşmazlıklar 2023
+        if (tarafSayisi == "2" && sonuc < 1600) {
+          sonuc = 1600;
+        } else if (tarafSayisi == "3" && sonuc < 1680) {
+          sonuc = 1680;
+        } else if (tarafSayisi == "6" && sonuc < 1800) {
+          sonuc = 1800;
+        } else if (tarafSayisi == "11" && sonuc < 1920) {
+          sonuc = 1920;
+        }
+      } else if (tip == "4") {
+        //Diğer Tür Uyuşmazlıklar 2023
+        if (tarafSayisi == "2" && sonuc < 1920) {
+          sonuc = 1920;
+        } else if (tarafSayisi == "3" && sonuc < 2000) {
+          sonuc = 2000;
+        } else if (tarafSayisi == "6" && sonuc < 2080) {
+          sonuc = 2080;
+        } else if (tarafSayisi == "11" && sonuc < 2160) {
+          sonuc = 2160;
+        }
+      }
+  
+      setArabulucuyaOdenecekMiktar(''+sonuc);
+      
+      console.log('tip' + tip);
+      console.log('arabulucuSayisi' + arabulucuSayisi);
+      console.log('tarafSayisi' + tarafSayisi);
+      console.log('anlasilanUcret' + anlasilanUcret);
+      console.log('sonuc' + sonuc);
     }
-    
-    console.log('theme');
   };
 
   return (
@@ -83,6 +212,9 @@ export default function UcretHesaplamaPanel() {
               </MenuItem>
               <MenuItem value={3} className={styles.tipMenu}>
                 Tüketici Uyuşmazlıklar 2023
+              </MenuItem>
+              <MenuItem value={4} className={styles.tipMenu}>
+                Diğer Uyuşmazlıklar 2023
               </MenuItem>
             </Select>
           </Grid>
@@ -142,32 +274,45 @@ export default function UcretHesaplamaPanel() {
             <span style={{ fontWeight: "bold" }}>Anlaşmaya Varılan Ücret</span>
           </Grid>
           <Grid item xs={12}>
-            <TextField className={styles.tipMenu} variant="standard" value={anlasilanUcret} onChange={()=>handleAnlasilanUcretChange}/>
+            <TextField
+              className={styles.tipMenu}
+              variant="standard"
+              value={anlasilanUcret}
+              onChange={handleAnlasilanUcretChange}
+            />
           </Grid>
           <br />
           <br />
           <Grid item xs={12}>
-            <Button onClick={() => handleHesapla}
-            className={styles.pageButtonStyle}>
+            <Button
+              onClick={handleHesapla}
+              className={styles.pageButtonStyle}
+            >
               Hesapla
             </Button>
-            
-            
           </Grid>
           <Grid item xs={12}>
             <br />
-            {arabulucuyaOdenecekMiktar>0 && (
-            <span style={{ padding:"5px", borderColor:"#27ae60",borderStyle:"solid",color:"rgb(79 86 101)", textDecoration:"underline", display: arabulucuyaOdenecekMiktar>0 ? '':'none' }}>
-              Arabulucuya Ödenecek Miktar : 
-              <b style={{fontWeight: "bold",color:"#27ae60"}}>{arabulucuyaOdenecekMiktar}</b> </span>
-            )}
+            {/* {(!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 && ( */}
+              <span
+                style={{
+                  padding: "5px",
+                  borderColor: "#27ae60",
+                  borderStyle: "solid",
+                  color: "rgb(79 86 101)",
+                  textDecoration: "underline",
+                  display: (!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 ? "" : "none",
+                }}
+              >
+                Arabulucuya Ödenecek Miktar :
+                <b style={{ fontWeight: "bold", color: "#27ae60" }}>
+                  {arabulucuyaOdenecekMiktar}
+                </b>{" "}
+              </span>
+            {/* )} */}
           </Grid>
-          
         </Grid>
-
-
       </Grid>
-      {/* <InputLabel id="demo-simple-select-label">Uyuşmazlık Tipi</InputLabel> */}
     </div>
   );
 }
