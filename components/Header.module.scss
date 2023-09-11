@@ -5,7 +5,7 @@
 .header {
   background-color: white;
   align-items: center;
-  width: 100%;
+  max-width: 100% !important;
   align-items: flex-start;
   display: inline-grid;
   .menuButton{

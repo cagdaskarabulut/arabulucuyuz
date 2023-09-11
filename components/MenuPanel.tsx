@@ -5,9 +5,6 @@ import React from "react";
 import { useRouter } from "next/router";
 
 export default function Menu() {
-  function handleMainPageClick() {
-    return "";
-  }
 
   const router = useRouter();
 
