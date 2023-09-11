@@ -1,1 +1,1 @@
-commitlerken .next , node ve node_modules göz ardı edelim
+nextjs ile geliştirilmiştir.
