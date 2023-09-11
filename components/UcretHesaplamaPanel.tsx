@@ -15,8 +15,9 @@ export default function UcretHesaplamaPanel() {
   const [arabulucuSayisi, setArabulucuSayisi] = useState("1");
   const [tarafSayisi, setTarafSayisi] = useState("2");
   const [anlasilanUcret, setAnlasilanUcret] = useState("0");
-  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] = useState("0");
-  
+  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] =
+    useState("0");
+
   const handleChange = (event: SelectChangeEvent) => {
     setTip(event.target.value as string);
     setArabulucuyaOdenecekMiktar("0");
@@ -32,99 +33,102 @@ export default function UcretHesaplamaPanel() {
     setArabulucuyaOdenecekMiktar("0");
   };
 
-  const handleAnlasilanUcretChange = (event: ChangeEvent) => {
+  const handleAnlasilanUcretChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     setAnlasilanUcret(event.target.value as string);
     setArabulucuyaOdenecekMiktar("0");
   };
 
   const anlasilanUcretUzerindenArabulucuOdemesiBul = () => {
     try {
-    let aktifAnlasilanUcretKalan = (!isNaN(+anlasilanUcret) ? Number(anlasilanUcret) : 0);
-    let sonuc = 0;
-    let oran = 0;
-    if (aktifAnlasilanUcretKalan > 0) {
-      oran = arabulucuSayisi == "1" ? 6 : 9;
-      if (aktifAnlasilanUcretKalan > 100000) {
-        sonuc = (100000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 100000;
-      } else {
-        sonuc = (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 5 : 7.5;
-      if (aktifAnlasilanUcretKalan > 160000) {
-        sonuc = sonuc + (160000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 160000;
-      } else {
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 4 : 6;
-      if (aktifAnlasilanUcretKalan > 260000) {
-        sonuc = sonuc + (260000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 260000;
-      } else {
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 3 : 4.5;
-      if (aktifAnlasilanUcretKalan > 520000) {
-        sonuc = sonuc + (520000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 520000;
-      } else {
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 2 : 3;
-      if (aktifAnlasilanUcretKalan > 1560000) {
-        sonuc = sonuc + (1560000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 1560000;
-      } else {
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 1.5 : 2.5;
-      if (aktifAnlasilanUcretKalan > 2080000) {
-        sonuc = sonuc + (2080000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 2080000;
-      } else {
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 1 : 1.5;
-      if (aktifAnlasilanUcretKalan > 4160000) {
-        sonuc = sonuc + (4160000 * oran) / 100;
-        aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 4160000;
-      } else {
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
-      }
-
-      oran = arabulucuSayisi == "1" ? 0.5 : 1;
+      let aktifAnlasilanUcretKalan = !isNaN(+anlasilanUcret)
+        ? Number(anlasilanUcret)
+        : 0;
+      let sonuc = 0;
+      let oran = 0;
       if (aktifAnlasilanUcretKalan > 0) {
-        //8840000
-        sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
-        aktifAnlasilanUcretKalan = 0;
+        oran = arabulucuSayisi == "1" ? 6 : 9;
+        if (aktifAnlasilanUcretKalan > 100000) {
+          sonuc = (100000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 100000;
+        } else {
+          sonuc = (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 5 : 7.5;
+        if (aktifAnlasilanUcretKalan > 160000) {
+          sonuc = sonuc + (160000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 160000;
+        } else {
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 4 : 6;
+        if (aktifAnlasilanUcretKalan > 260000) {
+          sonuc = sonuc + (260000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 260000;
+        } else {
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 3 : 4.5;
+        if (aktifAnlasilanUcretKalan > 520000) {
+          sonuc = sonuc + (520000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 520000;
+        } else {
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 2 : 3;
+        if (aktifAnlasilanUcretKalan > 1560000) {
+          sonuc = sonuc + (1560000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 1560000;
+        } else {
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 1.5 : 2.5;
+        if (aktifAnlasilanUcretKalan > 2080000) {
+          sonuc = sonuc + (2080000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 2080000;
+        } else {
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 1 : 1.5;
+        if (aktifAnlasilanUcretKalan > 4160000) {
+          sonuc = sonuc + (4160000 * oran) / 100;
+          aktifAnlasilanUcretKalan = aktifAnlasilanUcretKalan - 4160000;
+        } else {
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
+
+        oran = arabulucuSayisi == "1" ? 0.5 : 1;
+        if (aktifAnlasilanUcretKalan > 0) {
+          //8840000
+          sonuc = sonuc + (aktifAnlasilanUcretKalan * oran) / 100;
+          aktifAnlasilanUcretKalan = 0;
+        }
       }
+      return sonuc;
+    } catch (error) {
+      return 0;
     }
-    return sonuc;
-  } catch (error) {
-    return 0;
-  }
   };
 
-  
   const handleHesapla = () => {
     // setArabulucuyaOdenecekMiktar('0');
     let sonuc = anlasilanUcretUzerindenArabulucuOdemesiBul();
 
-    if(sonuc>0){
+    if (sonuc > 0) {
       if (tip == "1") {
         //İş Hukuku Uyuşmazlıkları 2023
         if (tarafSayisi == "2" && sonuc < 1600) {
@@ -170,14 +174,14 @@ export default function UcretHesaplamaPanel() {
           sonuc = 2160;
         }
       }
-  
-      setArabulucuyaOdenecekMiktar(''+sonuc);
-      
-      console.log('tip' + tip);
-      console.log('arabulucuSayisi' + arabulucuSayisi);
-      console.log('tarafSayisi' + tarafSayisi);
-      console.log('anlasilanUcret' + anlasilanUcret);
-      console.log('sonuc' + sonuc);
+
+      setArabulucuyaOdenecekMiktar("" + sonuc);
+
+      console.log("tip" + tip);
+      console.log("arabulucuSayisi" + arabulucuSayisi);
+      console.log("tarafSayisi" + tarafSayisi);
+      console.log("anlasilanUcret" + anlasilanUcret);
+      console.log("sonuc" + sonuc);
     }
   };
 
@@ -284,31 +288,33 @@ export default function UcretHesaplamaPanel() {
           <br />
           <br />
           <Grid item xs={12}>
-            <Button
-              onClick={handleHesapla}
-              className={styles.pageButtonStyle}
-            >
+            <Button onClick={handleHesapla} className={styles.pageButtonStyle}>
               Hesapla
             </Button>
           </Grid>
           <Grid item xs={12}>
             <br />
             {/* {(!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 && ( */}
-              <span
-                style={{
-                  padding: "5px",
-                  borderColor: "#27ae60",
-                  borderStyle: "solid",
-                  color: "rgb(79 86 101)",
-                  textDecoration: "underline",
-                  display: (!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 ? "" : "none",
-                }}
-              >
-                Arabulucuya Ödenecek Miktar :
-                <b style={{ fontWeight: "bold", color: "#27ae60" }}>
-                  {arabulucuyaOdenecekMiktar}
-                </b>{" "}
-              </span>
+            <span
+              style={{
+                padding: "5px",
+                borderColor: "#27ae60",
+                borderStyle: "solid",
+                color: "rgb(79 86 101)",
+                textDecoration: "underline",
+                display:
+                  (!isNaN(+arabulucuyaOdenecekMiktar)
+                    ? Number(arabulucuyaOdenecekMiktar)
+                    : 0) > 0
+                    ? ""
+                    : "none",
+              }}
+            >
+              Arabulucuya Ödenecek Miktar :
+              <b style={{ fontWeight: "bold", color: "#27ae60" }}>
+                {arabulucuyaOdenecekMiktar}
+              </b>{" "}
+            </span>
             {/* )} */}
           </Grid>
         </Grid>
