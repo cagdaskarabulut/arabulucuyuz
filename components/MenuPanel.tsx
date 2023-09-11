@@ -26,7 +26,6 @@ export default function Menu() {
           marginLeft: 10,
           marginRight: 10,
           width: "100%",
-          overflowX: "scroll",
           button: {
             flex: "none",
           },
