@@ -7,7 +7,7 @@
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 100% !important;
+  max-width: 100% !important;
 
   @include tablet-or-less {
     align-items: flex-start !important;

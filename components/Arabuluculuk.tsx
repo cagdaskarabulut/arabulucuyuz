@@ -3,14 +3,30 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Image from "next/image";
 import styles from "./Arabuluculuk.module.scss";
 import { Grid } from "@mui/material";
-export default class Arabuluculuk extends Component {
-  render() {
+import { useCallback, useContext, useEffect, useState } from "react";
+import useWindowSize from "@rooks/use-window-size";
+import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
+
+// export default class Arabuluculuk extends Component {
+  export default function Arabuluculuk() {
+    const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+    const [isMobile, setIsMobile] = useState(false);
+  
+    //_ Update when page resolution changes
+  useEffect(() => {
+    if (innerWidth === null) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE ? true : false);
+    }
+  }, [innerWidth]);
+
     return (
       <div className={styles.arabuluculukStyle}>
         <Grid spacing={2} container direction="row" 
           justifyContent="start"
           alignItems="start" columns={16} >
-          <Grid item xs={8}>
+          <Grid item xs={isMobile ? 16 : 8}>
             <Image
               src="https://img.freepik.com/free-photo/close-up-business-handshake_53876-25263.jpg?w=1060&t=st=1694272633~exp=1694273233~hmac=012c49e7568899ac5456b3627ea2587b478308a8e63898fb53e1661ccf026cc4"
               width={0}
@@ -19,6 +35,8 @@ export default class Arabuluculuk extends Component {
               style={{ width: "100%", height: "auto" }} // optional
               alt="Arabuluculuk"
             />
+          </Grid>
+          <Grid item xs={isMobile ? 16 : 8}>
             <p>
               Arabuluculuk, üçüncü kişinin tarafları bir araya getirerek
               müzakere edebilmelerini sağladığı ve aralarındaki iletişimi
@@ -36,8 +54,6 @@ export default class Arabuluculuk extends Component {
               kişinin katılımıyla ve ihtiyari olarak yürütülen uyuşmazlık çözüm
               yöntemi”</i> olarak tanımlanmaktadır.
             </p>
-          </Grid>
-          <Grid item xs={8}>
             <p>
               Arabuluculuk, elverişli her uyuşmazlık için kullanılabilecek bir
               uyuşmazlık çözüm yöntemidir. Ancak arabuluculuğa elverişli
@@ -109,5 +125,4 @@ export default class Arabuluculuk extends Component {
         </Grid>
       </div>
     );
-  }
 }

@@ -38,40 +38,41 @@ const Header = ({ }) => {
       columns={20} 
       direction="row"
       justifyContent="center"
-      alignItems="center">
+      alignItems="center"
+      >
         <Grid item xs={16}>
           <h1 className={styles.logoStyle}>Arabulucuyuz.org</h1>
         </Grid>
         {/* <Grid item xs={2}>
-          <Chip
+          <Chip style={{float: 'right'}}
             icon={<LocalPhoneIcon />}
             label="Telefon"
             onClick={handlePhoneClick}
           />
         </Grid> */}
         <Grid item xs={2}>
-          <Chip
+          <Chip style={{float: 'right'}}
             icon={<EmailIcon />}
             label="E-Posta"
             onClick={handleEmailClick}
           />
         </Grid>
         {/* <Grid item xs={2}>
-          <Chip
+          <Chip style={{float: 'right'}}
             icon={<InstagramIcon />}
             label="Instagram"
             onClick={handleInstagramClick}
           />
         </Grid>
         <Grid item xs={2}>
-          <Chip
+          <Chip style={{float: 'right'}}
             icon={<WhatsAppIcon />}
             label="Whatsapp"
             onClick={handleWhatsappClick}
           />
         </Grid> */}
         <Grid item xs={2}>
-          <Chip
+          <Chip style={{float: 'right'}}
             icon={<LocationOnIcon />}
             label="Adres"
             onClick={handleLocationClick}
