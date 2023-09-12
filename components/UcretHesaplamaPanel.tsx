@@ -39,6 +39,14 @@ export default function UcretHesaplamaPanel() {
     setAnlasilanUcret(event.target.value as string);
     setArabulucuyaOdenecekMiktar("0");
   };
+  const handleAnlasilanUcretFocus = (
+    event: React.FocusEvent<HTMLInputElement>
+  ) => {
+    if (anlasilanUcret == "0"){
+      setAnlasilanUcret("");
+    }
+    setArabulucuyaOdenecekMiktar("0");
+  };
 
   const anlasilanUcretUzerindenArabulucuOdemesiBul = () => {
     try {
@@ -187,14 +195,6 @@ export default function UcretHesaplamaPanel() {
 
   return (
     <div className={styles.ucretHesaplamaPanelStyle}>
-      <Grid
-        spacing={2}
-        container
-        direction="row"
-        justifyContent="start"
-        alignItems="start"
-        columns={20}
-      >
         <Grid item xs={20} columns={12}>
           <Grid item xs={12}>
             <span style={{ fontWeight: "bold" }}>Uyuşmazlık Tipi</span>
@@ -283,7 +283,9 @@ export default function UcretHesaplamaPanel() {
               variant="standard"
               value={anlasilanUcret}
               onChange={handleAnlasilanUcretChange}
-            />
+              onFocus={handleAnlasilanUcretFocus}
+            >
+            </TextField>
           </Grid>
           <br />
           <br />
@@ -318,7 +320,6 @@ export default function UcretHesaplamaPanel() {
             {/* )} */}
           </Grid>
         </Grid>
-      </Grid>
     </div>
   );
 }
