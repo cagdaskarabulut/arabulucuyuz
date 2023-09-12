@@ -12,7 +12,6 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
-
 export default function UcretHesaplamaPanel() {
   const [tip, setTip] = useState("1");
   const [arabulucuSayisi, setArabulucuSayisi] = useState("1");
