@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from "react";
 import styles from "./UcretHesaplamaPanel.module.scss";
-import CurrencyTextField from '@unicef/material-ui-currency-textfield';
+import CurrencyTextField from "@unicef/material-ui-currency-textfield";
 
 import {
   Button,
@@ -19,18 +19,18 @@ export default function UcretHesaplamaPanel() {
   const [anlasilanUcret, setAnlasilanUcret] = useState(0);
   const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] = useState("0");
   
-  const handleChange = (event: SelectChangeEvent) => {
-    setTip(event.target.value as string);
+  const handleChange = (event) => {
+    setTip(event.target.value);
     setArabulucuyaOdenecekMiktar("0");
   };
 
-  const handleArabulucuSayisiChange = (event: SelectChangeEvent) => {
-    setArabulucuSayisi(event.target.value as string);
+  const handleArabulucuSayisiChange = (event) => {
+    setArabulucuSayisi(event.target.value);
     setArabulucuyaOdenecekMiktar("0");
   };
 
-  const handleTarafSayisiChange = (event: SelectChangeEvent) => {
-    setTarafSayisi(event.target.value as string);
+  const handleTarafSayisiChange = (event) => {
+    setTarafSayisi(event.target.value);
     setArabulucuyaOdenecekMiktar("0");
   };
 
@@ -42,7 +42,7 @@ export default function UcretHesaplamaPanel() {
   // };
 
   const handleAnlasilanUcretFocus = (
-    event: React.FocusEvent<HTMLInputElement>
+    event
   ) => {
     if (anlasilanUcret == 0){
       setAnlasilanUcret(0);
@@ -134,7 +134,7 @@ export default function UcretHesaplamaPanel() {
     }
   };
   
-  const addCommas = (num: number) =>
+  const addCommas = (num) =>
   num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const handleHesapla = () => {
@@ -202,7 +202,7 @@ export default function UcretHesaplamaPanel() {
   };
 
   useEffect(() => {
-    const keyDownHandler = (event: { key: string; preventDefault: () => void; }) => {
+    const keyDownHandler = (event) => {
       // console.log('User pressed: ', event.key);
       if (event.key === 'Enter') {
         setArabulucuyaOdenecekMiktar("0");
@@ -317,7 +317,7 @@ export default function UcretHesaplamaPanel() {
               decimalCharacter="."
               digitGroupSeparator=","
               // onChange={(event: any, value: React.SetStateAction<number>)=> setValue(value)}
-              onChange={(event: any, value: React.SetStateAction<number>)=> setAnlasilanUcret(value)}
+              onChange={(event, value)=> setAnlasilanUcret(value)}
               // onChange={handleAnlasilanUcretChange}
               onFocus={handleAnlasilanUcretFocus}
             />
