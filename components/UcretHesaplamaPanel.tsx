@@ -1,5 +1,7 @@
 import React, { ChangeEvent } from "react";
 import styles from "./UcretHesaplamaPanel.module.scss";
+import CurrencyTextField from '@unicef/material-ui-currency-textfield';
+
 import {
   Button,
   Grid,
@@ -8,16 +10,16 @@ import {
   SelectChangeEvent,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
 
 export default function UcretHesaplamaPanel() {
   const [tip, setTip] = useState("1");
   const [arabulucuSayisi, setArabulucuSayisi] = useState("1");
   const [tarafSayisi, setTarafSayisi] = useState("2");
-  const [anlasilanUcret, setAnlasilanUcret] = useState("0");
-  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] =
-    useState("0");
-
+  const [anlasilanUcret, setAnlasilanUcret] = useState(0);
+  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] = useState("0");
+  
   const handleChange = (event: SelectChangeEvent) => {
     setTip(event.target.value as string);
     setArabulucuyaOdenecekMiktar("0");
@@ -33,17 +35,18 @@ export default function UcretHesaplamaPanel() {
     setArabulucuyaOdenecekMiktar("0");
   };
 
-  const handleAnlasilanUcretChange = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ) => {
-    setAnlasilanUcret(event.target.value as string);
-    setArabulucuyaOdenecekMiktar("0");
-  };
+  // const handleAnlasilanUcretChange = (
+  //   event: React.ChangeEvent<HTMLInputElement>
+  // ) => {
+  //   setAnlasilanUcret(event.target.value as string);
+  //   setArabulucuyaOdenecekMiktar("0");
+  // };
+
   const handleAnlasilanUcretFocus = (
     event: React.FocusEvent<HTMLInputElement>
   ) => {
-    if (anlasilanUcret == "0"){
-      setAnlasilanUcret("");
+    if (anlasilanUcret == 0){
+      setAnlasilanUcret(0);
     }
     setArabulucuyaOdenecekMiktar("0");
   };
@@ -131,6 +134,9 @@ export default function UcretHesaplamaPanel() {
       return 0;
     }
   };
+  
+  const addCommas = (num: number) =>
+  num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
   const handleHesapla = () => {
     // setArabulucuyaOdenecekMiktar('0');
@@ -183,15 +189,33 @@ export default function UcretHesaplamaPanel() {
         }
       }
 
-      setArabulucuyaOdenecekMiktar("" + sonuc);
+      // sonuc.toString().replace(",", ".");
+      console.log(addCommas(parseFloat(sonuc.toFixed(2))));
 
-      console.log("tip" + tip);
-      console.log("arabulucuSayisi" + arabulucuSayisi);
-      console.log("tarafSayisi" + tarafSayisi);
-      console.log("anlasilanUcret" + anlasilanUcret);
-      console.log("sonuc" + sonuc);
+      setArabulucuyaOdenecekMiktar(addCommas(parseFloat(sonuc.toFixed(2))));
+
+      // console.log("tip" + tip);
+      // console.log("arabulucuSayisi" + arabulucuSayisi);
+      // console.log("tarafSayisi" + tarafSayisi);
+      // console.log("anlasilanUcret" + anlasilanUcret);
+      // console.log("sonuc" + sonuc);
     }
   };
+
+  useEffect(() => {
+    const keyDownHandler = (event: { key: string; preventDefault: () => void; }) => {
+      // console.log('User pressed: ', event.key);
+      if (event.key === 'Enter') {
+        setArabulucuyaOdenecekMiktar("0");
+        event.preventDefault();
+        handleHesapla();
+      }
+    };
+    document.addEventListener('keydown', keyDownHandler);
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler);
+    };
+  });
 
   return (
     <div className={styles.ucretHesaplamaPanelStyle}>
@@ -278,14 +302,26 @@ export default function UcretHesaplamaPanel() {
             <span style={{ fontWeight: "bold" }}>Anlaşmaya Varılan Ücret</span>
           </Grid>
           <Grid item xs={12}>
-            <TextField
+            {/* <TextField
               className={styles.tipMenu}
               variant="standard"
               value={anlasilanUcret}
               onChange={handleAnlasilanUcretChange}
               onFocus={handleAnlasilanUcretFocus}
-            >
-            </TextField>
+            ></TextField> */}
+            <CurrencyTextField
+            className={styles.tipMenu}
+            variant="standard"
+              // label="Amount"
+              value={anlasilanUcret}
+              currencySymbol="TL"
+              decimalCharacter="."
+              digitGroupSeparator=","
+              // onChange={(event: any, value: React.SetStateAction<number>)=> setValue(value)}
+              onChange={(event: any, value: React.SetStateAction<number>)=> setAnlasilanUcret(value)}
+              // onChange={handleAnlasilanUcretChange}
+              onFocus={handleAnlasilanUcretFocus}
+            />
           </Grid>
           <br />
           <br />
@@ -296,6 +332,7 @@ export default function UcretHesaplamaPanel() {
           </Grid>
           <Grid item xs={12}>
             <br />
+            <br />
             {/* {(!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 && ( */}
             <span
               style={{
@@ -303,19 +340,21 @@ export default function UcretHesaplamaPanel() {
                 borderColor: "#27ae60",
                 borderStyle: "solid",
                 color: "rgb(79 86 101)",
-                textDecoration: "underline",
+                fontWeight: "bold",
+                // textDecoration: "underline",
                 display:
-                  (!isNaN(+arabulucuyaOdenecekMiktar)
-                    ? Number(arabulucuyaOdenecekMiktar)
-                    : 0) > 0
+                  // (!isNaN(+arabulucuyaOdenecekMiktar)
+                  //   ? Number(arabulucuyaOdenecekMiktar)
+                  //   : 0) > 0
+                  arabulucuyaOdenecekMiktar!='0'
                     ? ""
                     : "none",
               }}
             >
               Arabulucuya Ödenecek Miktar :
-              <b style={{ fontWeight: "bold", color: "#27ae60" }}>
+              <b style={{ color: "#27ae60", marginLeft:"5px" }}>
                 {arabulucuyaOdenecekMiktar}
-              </b>{" "}
+              </b>
             </span>
             {/* )} */}
           </Grid>
