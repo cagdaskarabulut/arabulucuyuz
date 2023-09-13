@@ -7,8 +7,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 // import InstagramIcon from "@mui/icons-material/Instagram";
 // import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
-const Header = ({ }) => {
-  
+const Header = ({}) => {
   function handleEmailClick() {
     window.location.href = "mailto:" + "oznurilhankarabulut@gmail.com";
   }
@@ -33,12 +32,12 @@ const Header = ({ }) => {
 
   return (
     <Container className={styles.header}>
-      <Grid 
-      container
-      columns={20} 
-      direction="row"
-      justifyContent="center"
-      alignItems="center"
+      <Grid
+        container
+        columns={20}
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
       >
         <Grid item xs={16}>
           <h1 className={styles.logoStyle}>Arabulucuyuz.org</h1>
@@ -51,7 +50,8 @@ const Header = ({ }) => {
           />
         </Grid> */}
         <Grid item xs={2}>
-          <Chip style={{float: 'right'}}
+          <Chip
+            style={{ float: "right" }}
             icon={<EmailIcon />}
             label="E-Posta"
             onClick={handleEmailClick}
@@ -72,7 +72,8 @@ const Header = ({ }) => {
           />
         </Grid> */}
         <Grid item xs={2}>
-          <Chip style={{float: 'right'}}
+          <Chip
+            style={{ float: "right" }}
             icon={<LocationOnIcon />}
             label="Adres"
             onClick={handleLocationClick}

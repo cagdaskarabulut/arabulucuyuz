@@ -13,13 +13,13 @@ import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 
 const FooterPanel = () => {
   //_ MobilePart
-  const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+  const { innerWidth } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     if (innerWidth === null) {
       setIsMobile(false);
     } else {
-      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE ? true : false);
+      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE);
     }
   }, [innerWidth]);
 
@@ -33,16 +33,16 @@ const FooterPanel = () => {
         alignItems="center"
       >
         <Grid item xs={isMobile ? 12 : 6}>
-        <div className={styles.arabuluculukStyle}>
-            © Copyright 2023 Arabulucuyuz.org. 
-            {isMobile ? " " : <br/>}
+          <div className={styles.footerContentStyle}>
+            © Copyright 2023 Arabulucuyuz.org.
+            {isMobile ? " " : <br />}
             Tüm Hakları Saklıdır.
-            {isMobile ? " " : <br/>}
+            {isMobile ? " " : <br />}
             Tasarım Karabulut Yazılım.
           </div>
         </Grid>
         <Grid item xs={isMobile ? 12 : 6}>
-          <div className={styles.arabuluculukStyle}>
+          <div className={styles.footerContentStyle}>
             Bu sitede paylaşılan bilgiler yalnızca bilgilendirme amaçlı olup,
             Türkiye Cumhuriyeti Barolar Birliği’nin ilgili düzenlemeleri
             uyarınca reklam, teklif, hukuki öneri veya danışmanlık teşkil etmez.

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import Image from "next/image";
-import styles from "./SorularPanel.module.scss";
 import { Grid } from "@mui/material";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
 
 export default class SorularPanel extends Component {
   render() {
     return (
-      <div className={styles.sorularPanelStyle}>
+      <div>
         <Grid
           spacing={2}
           container
@@ -18,7 +16,7 @@ export default class SorularPanel extends Component {
           columns={16}
         >
           <Grid item xs={8}>
-            <p>
+            <p style={{marginTop:"0px"}}>
               <QuestionAnswerIcon />
               <b>ARABULUCULUĞA ELVERİŞLİ ALANLAR NELERDİR?</b> <br />
               Tarafların üzerinde serbestçe tasarruf edebildikleri her özel
@@ -43,7 +41,7 @@ export default class SorularPanel extends Component {
             </p>
           </Grid>
           <Grid item xs={8}>
-            <p>
+            <p style={{marginTop:"0px"}}>
               <QuestionAnswerIcon />
               <b>ARABULUCU İLE AVUKAT ARASINDAKİ FARKLAR NELERDİR?</b> <br />
               Avukat, hukuki ilişkilerin düzenlenmesi ve hukuki uyuşmazlıkların

@@ -6,10 +6,12 @@ import PageTemplate from "@/components/PageTemplate";
 export default function Home() {
   return (
     <>
-      <MetaPanel title="Arabulucuyuz.org"
-      name="Arabulucu ve Avukat" 
-      content="Arabuluculuk ve İcra Hukuku Konularında Uzman" />
-      <PageTemplate content={<Arabuluculuk />}/>
+      <MetaPanel
+        title="Arabulucuyuz.org"
+        name="Arabulucu ve Avukat"
+        content="Arabuluculuk ve İcra Hukuku Konularında Uzman"
+      />
+      <PageTemplate content={<Arabuluculuk />} />
     </>
   );
 }

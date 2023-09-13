@@ -8,23 +8,14 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import { useRouter } from "next/router";
-
-
+import { useState } from "react";
 
 function MenuPanelMobile() {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
-    null
-  );
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElNav, setAnchorElNav] = useState(null);
   const router = useRouter();
   function handleEmailClick() {
     window.location.href = "mailto:" + "oznurilhankarabulut@gmail.com";
@@ -38,7 +29,7 @@ function MenuPanelMobile() {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const handleClick = (event: React.ChangeEvent<any>) => {
+  const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
@@ -49,24 +40,26 @@ function MenuPanelMobile() {
     setAnchorElNav(null);
   };
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleNavMenu = (page: string) => {
+  const handleNavMenu = (page) => {
     setAnchorElNav(null);
-    router.push("/"+page);
+    router.push("/" + page);
   };
 
   return (
-    <AppBar className={styles.menuPanelStyle} 
-    position="static" 
-    >
-      <Container
-      disableGutters={true}
-      maxWidth="xl">
+    <AppBar className={styles.menuPanelStyle} position="fixed">
+      <Container disableGutters={true} maxWidth="xl">
         <Toolbar disableGutters>
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent:"space-around" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "space-around",
+            }}
+          >
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -95,30 +88,50 @@ function MenuPanelMobile() {
                 display: { xs: "block", md: "none" },
               }}
             >
-                <MenuItem key="Arabuluculuk" onClick={()=>handleNavMenu("")}>
-                  <Typography textAlign="center">Arabuluculuk</Typography>
-                </MenuItem>
-                <MenuItem key="Sorular" onClick={()=>handleNavMenu("Sorular")}>
-                  <Typography textAlign="center">Sorular</Typography>
-                </MenuItem>
-                <MenuItem key="Hizmetler" onClick={()=>handleNavMenu("Hizmetler")}>
-                  <Typography textAlign="center">Hizmetler</Typography>
-                </MenuItem>
-                <MenuItem key="UcretHesaplama" onClick={()=>handleNavMenu("UcretHesaplama")}>
-                  <Typography textAlign="center">Ücret hesaplama</Typography>
-                </MenuItem>
-                <MenuItem key="BenKimim" onClick={()=>handleNavMenu("BenKimim")}>
-                  <Typography textAlign="center">BenKimim</Typography>
-                </MenuItem>
-
+              <MenuItem key="Arabuluculuk" onClick={() => handleNavMenu("")}>
+                <Typography textAlign="center">Arabuluculuk</Typography>
+              </MenuItem>
+              <MenuItem key="Sorular" onClick={() => handleNavMenu("Sorular")}>
+                <Typography textAlign="center">Sorular</Typography>
+              </MenuItem>
+              <MenuItem
+                key="Hizmetler"
+                onClick={() => handleNavMenu("Hizmetler")}
+              >
+                <Typography textAlign="center">Hizmetler</Typography>
+              </MenuItem>
+              <MenuItem
+                key="UcretHesaplama"
+                onClick={() => handleNavMenu("UcretHesaplama")}
+              >
+                <Typography textAlign="center">Ücret hesaplama</Typography>
+              </MenuItem>
+              <MenuItem
+                key="BenKimim"
+                onClick={() => handleNavMenu("BenKimim")}
+              >
+                <Typography textAlign="center">BenKimim</Typography>
+              </MenuItem>
             </Menu>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent:"space-around" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "space-around",
+            }}
+          >
             <h1 className={styles.logoStyle}>Arabulucuyuz.org</h1>
           </Box>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" }, justifyContent:"space-around" }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "flex", md: "none" },
+              justifyContent: "space-around",
+            }}
+          >
             <Button
               id="basic-button"
               className={styles.menuFont}

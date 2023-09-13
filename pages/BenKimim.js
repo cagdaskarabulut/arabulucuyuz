@@ -1,14 +1,11 @@
-import styles from "./BenKimim.module.scss";
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
 
-//-Ben kimim sayfası
 export default function BenKimim() {
-
   const PageContentBenKimim = () => {
     return (
-      <div className={styles.benKimimStyle}>
-        <p>
+      <div>
+        <p style={{marginTop:"0px"}}>
           <b>AV. ARB. ÖZNUR İLHAN KARABULUT</b>
         </p>
         <p>

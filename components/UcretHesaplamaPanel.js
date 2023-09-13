@@ -217,7 +217,7 @@ export default function UcretHesaplamaPanel() {
   });
 
   return (
-    <div className={styles.ucretHesaplamaPanelStyle}>
+    <div>
         <Grid item xs={20} columns={12}>
           <Grid item xs={12}>
             <span style={{ fontWeight: "bold" }}>Uyuşmazlık Tipi</span>

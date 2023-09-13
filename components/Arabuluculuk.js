@@ -1,27 +1,23 @@
-import React, { Component } from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import React, { useEffect, useState }  from "react";
 import Image from "next/image";
-import styles from "./Arabuluculuk.module.scss";
 import { Grid } from "@mui/material";
-import { useCallback, useContext, useEffect, useState } from "react";
 import useWindowSize from "@rooks/use-window-size";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 
-// export default class Arabuluculuk extends Component {
 export default function Arabuluculuk() {
   //_ MobilePart
-  const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+  const { innerWidth } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     if (innerWidth === null) {
       setIsMobile(false);
     } else {
-      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE ? true : false);
+      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE);
     }
   }, [innerWidth]);
 
   return (
-    <div className={styles.arabuluculukStyle}>
+    <div>
       <Grid
         spacing={2}
         container

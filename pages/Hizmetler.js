@@ -1,14 +1,11 @@
-import styles from "./Hizmetler.module.scss";
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
 
-//-Hizmetler sayfası
 export default function Hizmetler() {
-  
   const PageContentHizmetler = () => {
     return (
-      <div className={styles.hizmetlerStyle}>
-        <ul>
+      <div>
+        <ul style={{marginTop:"0px"}}>
           <li>İŞÇİ İŞVEREN UYUŞMAZLIKLARINDA ARABULUCULUK</li>
           <li>TİCARİ UYUŞMAZLIKLARDA ARABULUCULUK</li>
           <li>TÜKETİCİ UYUŞMAZLIKLARINDA ARABULUCULUK</li>

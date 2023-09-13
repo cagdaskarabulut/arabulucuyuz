@@ -5,13 +5,12 @@
 .footerStyle {
   background-color: $white-hover;
 
-  .arabuluculukStyle {
+  .footerContentStyle {
     display: flex;
+    padding: 30px;
 
-  padding: 30px;
-  @include tablet-or-less {
-    padding: 10px;
-  }
+    @include tablet-or-less {
+      padding: 10px;
+    }
   }
 }
-
