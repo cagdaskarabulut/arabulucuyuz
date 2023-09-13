@@ -37,7 +37,7 @@ export default function Arabuluculuk() {
           />
         </Grid>
         <Grid item xs={isMobile ? 16 : 8}>
-          <p>
+          <p style={{marginTop:"0px"}}>
             Arabuluculuk, üçüncü kişinin tarafları bir araya getirerek müzakere
             edebilmelerini sağladığı ve aralarındaki iletişimi kolaylaştırdığı,
             çözüme ilişkin karar verme yetkisinin taraflarda kaldığı, sürece
