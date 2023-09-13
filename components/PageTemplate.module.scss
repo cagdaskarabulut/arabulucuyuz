@@ -1,0 +1,22 @@
+@import "../styles/mixins.scss";
+@import "../styles/colors.scss";
+@import "../styles/globals.scss"; 
+
+.BodyStyle{
+  min-height: 98vh; 
+  margin:0;
+  background-color: white;
+  color: $font;
+  font-family: 'Times New Roman';
+  font-size: 14px;
+  :global {
+    .MuiChip-label {
+      font-family: 'Times New Roman' !important;
+      font-size: 14px;
+    }
+  }
+}
+.HeaderStyle{ min-height:50px; background:lightcyan; } 
+.FooterStyle{ min-height:50px; background:PapayaWhip; }
+.BodyStyle{ display:flex; flex-direction:column; }
+.ContentStyle{ flex:1; }

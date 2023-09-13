@@ -1,21 +1,6 @@
 @import "./colors.scss";
 @import "./mixins.scss";
 
-.indexStyle{
-  background-color: white;
-  color: $font;
-  font-family: 'Times New Roman';
-  font-size: 14px;
-
-:global {
-  .MuiChip-label {
-    font-family: 'Times New Roman' !important;
-    font-size: 14px;
-  }
-}
-
-}
-
 .logoStyle{
   color: $main;
   font-family: cursive;

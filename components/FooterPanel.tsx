@@ -1,6 +1,10 @@
 import styles from "./FooterPanel.module.scss";
 import { Grid } from "@mui/material";
 import React from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
+import useWindowSize from "@rooks/use-window-size";
+import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
+
 // import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 // import EmailIcon from "@mui/icons-material/Email";
 // import InstagramIcon from "@mui/icons-material/Instagram";
@@ -8,6 +12,17 @@ import React from "react";
 // import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const FooterPanel = () => {
+  //_ MobilePart
+  const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    if (innerWidth === null) {
+      setIsMobile(false);
+    } else {
+      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE ? true : false);
+    }
+  }, [innerWidth]);
+
   return (
     <div className={styles.footerStyle}>
       <Grid
@@ -17,16 +32,16 @@ const FooterPanel = () => {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={6}>
+        <Grid item xs={isMobile ? 12 : 6}>
         <div className={styles.arabuluculukStyle}>
             © Copyright 2023 Arabulucuyuz.org. 
-            <br/>
+            {isMobile ? " " : <br/>}
             Tüm Hakları Saklıdır.
-            <br />
+            {isMobile ? " " : <br/>}
             Tasarım Karabulut Yazılım.
           </div>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={isMobile ? 12 : 6}>
           <div className={styles.arabuluculukStyle}>
             Bu sitede paylaşılan bilgiler yalnızca bilgilendirme amaçlı olup,
             Türkiye Cumhuriyeti Barolar Birliği’nin ilgili düzenlemeleri

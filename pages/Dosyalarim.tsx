@@ -1,50 +1,21 @@
-import styles from "./index.module.scss";
 import MetaPanel from "../components/MetaPanel";
-import Header from "../components/Header";
-import MenuPanel from "../components/MenuPanel";
-import { useCallback, useContext, useEffect, useState } from "react";
-import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
-import useWindowSize from "@rooks/use-window-size";
-import FooterPanel from "@/components/FooterPanel";
-import MenuPanelMobile from "@/components/MenuPanelMobile";
+import PageTemplate from "@/components/PageTemplate";
 
 //-Dosyalarim sayfası
 export default function UcretHesaplama() {
-  const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
-  const [isMobile, setIsMobile] = useState(false);
 
-  //_ Update when page resolution changes
-  useEffect(() => {
-    if (innerWidth === null) {
-      setIsMobile(false);
-    } else {
-      setIsMobile(innerWidth < MOBILE_SCREEN_SIZE ? true : false);
-    }
-  }, [innerWidth]);
-
-  const HeaderField = () => {
-    if (isMobile) {
-      return <></>;
-    } else {
-      return <Header />;
-    }
-  };
-
-  const MenuField = () => {
-    if (isMobile) {
-      return <MenuPanelMobile />;
-    } else {
-      return <MenuPanel />;
-    }
+  const PageContentDosyalarim = () => {
+    return (
+      <p>Dosyalarim</p>
+    );
   };
 
   return (
-    <div className={styles.indexStyle}>
-      <MetaPanel />
-      <HeaderField />
-      <MenuField />
-      <p>Dosyalarim</p>
-      <FooterPanel />
-    </div>
+    <>
+      <MetaPanel title="Arabulucuyuz.org"
+      name="Arabulucu ve Avukat" 
+      content="Arabuluculuk ve İcra Hukuku Konularında Uzman" />
+      <PageTemplate content={<PageContentDosyalarim/>}/>
+    </>
   );
 }

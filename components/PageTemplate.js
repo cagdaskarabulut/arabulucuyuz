@@ -1,16 +1,15 @@
-import styles from "./BenKimim.module.scss";
-import { Box, Button, Chip, Container, Grid } from "@mui/material";
-import MetaPanel from "../components/MetaPanel";
-import Header from "../components/Header";
-import MenuPanel from "../components/MenuPanel";
+import styles from "./PageTemplate.module.scss";
+import Header from "./Header";
+import MenuPanel from "./MenuPanel";
 import { useCallback, useContext, useEffect, useState } from "react";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 import useWindowSize from "@rooks/use-window-size";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
+import Arabuluculuk from "@/components/Arabuluculuk";
 
-//-Ben kimim sayfası
-export default function BenKimim() {
+//- Açılış sayfası , Hizmetlerimiz sayfası
+const PageTemplate = ({ content }) => {
   const { innerWidth, innerHeight, outerHeight, outerWidth } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -40,15 +39,19 @@ export default function BenKimim() {
   };
 
   return (
-    <div className={styles.indexStyle}>
-      <MetaPanel />
-      <HeaderField />
-      <MenuField />
-      <div className={styles.benKimimStyle}>
-        <p><b>AV. ARB. ÖZNUR İLHAN KARABULUT</b></p>
-        <p>2010 YILINDA MALTEPE ÜNİVERSİTESİ HUKUK FAKÜLTESİNDEN MEZUN OLMASININ ARDINDAN ÖZEL HUKUK ALANINDA ÇALIŞMA HAYATI OLMUŞTUR. 2020 YILINDA ARABULUCULUK DAİRE BAŞKANLIĞI SİCİLİNE KAYIT OLARAK 12511 SİCİL NOLU ARBULUCU OLARAK GÖREV YAPMAYA BAŞLAMIŞTIR.</p>
+    <div className={styles.BodyStyle}>
+      <div className={styles.HeaderStyle}>
+        <HeaderField />
+        <MenuField />
       </div>
-      <FooterPanel />
+      <div className={styles.ContentStyle}>
+        {content}
+      </div>
+      <div className={styles.FooterStyle}>
+        <FooterPanel />
+      </div>
     </div>
   );
 }
+
+export default PageTemplate;

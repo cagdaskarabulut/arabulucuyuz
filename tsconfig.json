@@ -29,7 +29,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "components/PageTemplate.js", "pages/BenKimim.js", "components/MetaPanel.js"  ],
   "exclude": [
     "node_modules"
   ]

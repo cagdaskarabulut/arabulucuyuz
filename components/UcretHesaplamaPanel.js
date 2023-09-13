@@ -301,24 +301,14 @@ export default function UcretHesaplamaPanel() {
             <span style={{ fontWeight: "bold" }}>Anlaşmaya Varılan Ücret</span>
           </Grid>
           <Grid item xs={12}>
-            {/* <TextField
-              className={styles.tipMenu}
-              variant="standard"
-              value={anlasilanUcret}
-              onChange={handleAnlasilanUcretChange}
-              onFocus={handleAnlasilanUcretFocus}
-            ></TextField> */}
             <CurrencyTextField
             className={styles.tipMenu}
             variant="standard"
-              // label="Amount"
               value={anlasilanUcret}
               currencySymbol="TL"
               decimalCharacter="."
               digitGroupSeparator=","
-              // onChange={(event: any, value: React.SetStateAction<number>)=> setValue(value)}
               onChange={(event, value)=> setAnlasilanUcret(value)}
-              // onChange={handleAnlasilanUcretChange}
               onFocus={handleAnlasilanUcretFocus}
             />
           </Grid>
@@ -333,18 +323,10 @@ export default function UcretHesaplamaPanel() {
             <br />
             <br />
             {/* {(!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 && ( */}
-            <span
+            <div
+            className={styles.arabulucuyaOdenecekMiktarStyle}
               style={{
-                padding: "5px",
-                borderColor: "#27ae60",
-                borderStyle: "solid",
-                color: "rgb(79 86 101)",
-                fontWeight: "bold",
-                // textDecoration: "underline",
                 display:
-                  // (!isNaN(+arabulucuyaOdenecekMiktar)
-                  //   ? Number(arabulucuyaOdenecekMiktar)
-                  //   : 0) > 0
                   arabulucuyaOdenecekMiktar!='0'
                     ? ""
                     : "none",
@@ -354,7 +336,7 @@ export default function UcretHesaplamaPanel() {
               <b style={{ color: "#27ae60", marginLeft:"5px" }}>
                 {arabulucuyaOdenecekMiktar}
               </b>
-            </span>
+            </div>
             {/* )} */}
           </Grid>
         </Grid>
