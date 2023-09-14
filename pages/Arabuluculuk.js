@@ -3,7 +3,7 @@ import ArabulucuPanel from "@/components/ArabulucuPanel";
 import PageTemplate from "@/components/PageTemplate";
 
 //- Açılış sayfası , Hizmetlerimiz sayfası
-export default function Home() {
+export default function Arabuluculuk() {
   return (
     <>
       <MetaPanel

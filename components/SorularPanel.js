@@ -17,8 +17,8 @@ export default class SorularPanel extends Component {
         >
           <Grid item xs={8}>
             <p style={{marginTop:"0px"}}>
-              <QuestionAnswerIcon />
-              <b>ARABULUCULUĞA ELVERİŞLİ ALANLAR NELERDİR?</b> <br />
+              <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
+              <b>ARABULUCULUĞA ELVERİŞLİ ALANLAR NELERDİR?</b><br />
               Tarafların üzerinde serbestçe tasarruf edebildikleri her özel
               hukuk uyuşmazlığı için arabuluculuğa gidilebilir. Tarafların sulh
               olabildikleri özel hukuk uyuşmazlıkları arabuluculuğa
@@ -26,7 +26,8 @@ export default class SorularPanel extends Component {
               elverişli uyuşmazlıklar, yabancılık unsuru da taşıyabilir.
             </p>
             <p>
-              <QuestionAnswerIcon /> <b>ARABULUCU NASIL SEÇİLİR?</b> <br />
+              <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
+              <b>ARABULUCU NASIL SEÇİLİR?</b> <br />
               Taraflar arabulucuyu kendileri seçebilirler. Taraflar arabulucunun
               kim olacağı konusunda anlaşmaya varamazlar ise, dava şartı
               arabuluculukta arabulucu, adliyelerdeki arabuluculuk bürolarındaki
@@ -34,7 +35,8 @@ export default class SorularPanel extends Component {
               listesinden atanır.
             </p>
             <p>
-              <QuestionAnswerIcon /> <b>ARABULUCU KİMDİR?</b> <br />
+              <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
+              <b>ARABULUCU KİMDİR?</b> <br />
               Arabulucu, taraflar arasındaki çatışmanın çözümüne yardımcı olmak
               amacıyla arabuluculuk sürecini idare eden ve arabuluculuk
               yöntemlerini bilip uygulayabilen tarafsız gerçek kişidir.
@@ -42,7 +44,7 @@ export default class SorularPanel extends Component {
           </Grid>
           <Grid item xs={8}>
             <p style={{marginTop:"0px"}}>
-              <QuestionAnswerIcon />
+              <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
               <b>ARABULUCU İLE AVUKAT ARASINDAKİ FARKLAR NELERDİR?</b> <br />
               Avukat, hukuki ilişkilerin düzenlenmesi ve hukuki uyuşmazlıkların
               çözümünde bilgi ve tecrübesini adaletin hizmetine ve kişilerin
@@ -57,7 +59,7 @@ export default class SorularPanel extends Component {
               önerebilir
             </p>
             <p>
-              <QuestionAnswerIcon />
+              <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
               <b>ARABULUCU İLE AVUKAT ARASINDAKİ FARKLAR NELERDİR?</b> <br />
               Taraflar arabuluculuk sürecinin sonunda bir anlaşmaya varırlarsa
               bu anlaşma taraflar için bağlayıcı olmaktadır. Anlaşmanın icra

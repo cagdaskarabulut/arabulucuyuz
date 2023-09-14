@@ -1,22 +1,16 @@
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
+import SendIcon from '@mui/icons-material/Send';
 
 export default function Hizmetler() {
   const PageContentHizmetler = () => {
     return (
       <div>
-        <ul style={{marginTop:"0px"}}>
-          <li>İŞÇİ İŞVEREN UYUŞMAZLIKLARINDA ARABULUCULUK</li>
-          <li>TİCARİ UYUŞMAZLIKLARDA ARABULUCULUK</li>
-          <li>TÜKETİCİ UYUŞMAZLIKLARINDA ARABULUCULUK</li>
-          <li>
-            TARIMSAL ÜRETİM SÖZLEŞMESİNDEN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK
-          </li>
-          <li>
-            KİRA HUKUKU ANLAŞMAZLIKLARINDAN KAYNAKLI UYUŞMAZLIKLARDA
-            ARABULUCULUK
-          </li>
-        </ul>
+        <SendIcon style={{fontSize:"12px"}}/> İŞÇİ İŞVEREN UYUŞMAZLIKLARINDA ARABULUCULUK<br/><br/>
+        <SendIcon style={{fontSize:"12px"}}/> TİCARİ UYUŞMAZLIKLARDA ARABULUCULUK<br/><br/>
+        <SendIcon style={{fontSize:"12px"}}/> TÜKETİCİ UYUŞMAZLIKLARINDA ARABULUCULUK<br/><br/>
+        <SendIcon style={{fontSize:"12px"}}/> TARIMSAL ÜRETİM SÖZLEŞMESİNDEN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK<br/><br/>
+        <SendIcon style={{fontSize:"12px"}}/> KİRA HUKUKU ANLAŞMAZLIKLARINDAN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK 
       </div>
     );
   };

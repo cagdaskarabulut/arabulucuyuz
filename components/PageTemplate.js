@@ -6,7 +6,6 @@ import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 import useWindowSize from "@rooks/use-window-size";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
-import Arabuluculuk from "@/components/Arabuluculuk";
 
 //- Açılış sayfası , Hizmetlerimiz sayfası
 const PageTemplate = ({ content }) => {

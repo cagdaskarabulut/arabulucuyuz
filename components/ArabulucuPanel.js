@@ -4,7 +4,7 @@ import { Grid } from "@mui/material";
 import useWindowSize from "@rooks/use-window-size";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
 
-export default function Arabuluculuk() {
+export default function ArabulucuPanel() {
   //_ MobilePart
   const { innerWidth } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
@@ -28,7 +28,7 @@ export default function Arabuluculuk() {
       >
         <Grid item xs={isMobile ? 16 : 8}>
           <Image
-            src="https://img.freepik.com/free-photo/close-up-business-handshake_53876-25263.jpg?w=1060&t=st=1694272633~exp=1694273233~hmac=012c49e7568899ac5456b3627ea2587b478308a8e63898fb53e1661ccf026cc4"
+            src="/images/close-up-business-handshake.jpg"
             width={0}
             height={0}
             sizes="100vw"
