@@ -11,7 +11,7 @@ const MetaPanel = ({ title , name , content }) => {
         content={content}
       />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <link rel="icon" href="/images/Shake-hand.png" />
+      <link rel="icon" href="/images/Arabulucu-icon.png" />
     </Head>
   );
 };

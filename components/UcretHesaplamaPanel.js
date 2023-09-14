@@ -306,10 +306,13 @@ export default function UcretHesaplamaPanel() {
             variant="standard"
               value={anlasilanUcret}
               currencySymbol="TL"
-              decimalCharacter="."
-              digitGroupSeparator=","
+              decimalPlaces="2"
+              decimalCharacter=","
+              digitGroupSeparator="."
               onChange={(event, value)=> setAnlasilanUcret(value)}
               onFocus={handleAnlasilanUcretFocus}
+              placeholder="100.000,50"
+              selectOnFocus={false}
             />
           </Grid>
           <br />

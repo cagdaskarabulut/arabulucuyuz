@@ -40,7 +40,7 @@ const Header = ({}) => {
         alignItems="center"
       >
         <Grid item xs={16}>
-          <h1 className={styles.logoStyle}>Arabulucuyuz.org</h1>
+          <h1 className={styles.logoStyle}><a style={{textDecoration:"none",color:"inherit"}} href="/Arabuluculuk">Arabulucuyuz.org</a></h1>
         </Grid>
         {/* <Grid item xs={2}>
           <Chip style={{float: 'right'}}
