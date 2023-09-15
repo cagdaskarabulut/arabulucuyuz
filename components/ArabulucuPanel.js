@@ -28,7 +28,7 @@ export default function ArabulucuPanel() {
       >
         <Grid item xs={isMobile ? 16 : 8}>
           <Image
-            src="/images/close-up-business-handshake.jpg"
+            src="/images/Arabulucu.jpg"
             width={0}
             height={0}
             sizes="100vw"

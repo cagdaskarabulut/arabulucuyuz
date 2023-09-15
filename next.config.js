@@ -14,17 +14,18 @@ const nextConfig = {
   }
 }
 
-// module.exports = nextConfig
+// module.exports = {
+//   async redirects() {
+//     return [
+//       {
+//         source: '/',
+//         destination: '/Arabuluculuk',
+//         permanent: true,
+//       },
+//     ]
+//   },
+// }
 
-module.exports = {
-    async redirects() {
-      return [
-        {
-          source: '/',
-          destination: '/Arabuluculuk',
-          permanent: true,
-        },
-      ]
-    },
-  }
+module.exports = nextConfig
+
 

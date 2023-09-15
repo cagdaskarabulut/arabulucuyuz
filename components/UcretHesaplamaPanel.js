@@ -306,7 +306,7 @@ export default function UcretHesaplamaPanel() {
             variant="standard"
               value={anlasilanUcret}
               currencySymbol="TL"
-              decimalPlaces="2"
+              // decimalPlaces="2"
               decimalCharacter=","
               digitGroupSeparator="."
               onChange={(event, value)=> setAnlasilanUcret(value)}
