@@ -9,7 +9,7 @@ export default function Arabuluculuk() {
       <MetaPanel
         title="Arabulucuyuz.org"
         name="Arabulucu ve Avukat"
-        content="Arabuluculuk ve İcra Hukuku Konularında Uzman"
+        nameContent="Arabuluculuk ve İcra Hukuku Konularında Uzman"
       />
       <PageTemplate content={<ArabulucuPanel />} />
     </>

@@ -20,7 +20,7 @@ export default function Hizmetler() {
       <MetaPanel
         title="Hizmetlerimiz"
         name="Arabulucu ve Avukat"
-        content="Arabuluculuk ve İcra Hukuku Konularında Uzman"
+        nameContent="Arabuluculuk ve İcra Hukuku Konularında Uzman"
       />
       <PageTemplate content={<PageContentHizmetler />} />
     </>

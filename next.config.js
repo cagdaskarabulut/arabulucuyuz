@@ -28,4 +28,4 @@ const nextConfig = {
 
 module.exports = nextConfig
 
-
+optimizeDynamicImport = true //added for seo
