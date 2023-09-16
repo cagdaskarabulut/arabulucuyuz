@@ -73,6 +73,7 @@ const MetaPanel = ({
       <link rel="icon" href={iconHref} />
 
       <meta name="google-site-verification" content="ZqEtWJqvbP4hrjZXAHOhtMDausn70UMrPIHHIMQORDk" />
+      <meta name="yandex-verification" content="482b1df21423a716" />
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1" />
       <meta name="Language" content="tr" />
       <meta property="og:locale" content="tr_TR" />
