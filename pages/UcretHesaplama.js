@@ -8,8 +8,8 @@ export default function UcretHesaplama() {
     <>
       <MetaPanel
         title="Arabuluculuk Ücret Hesaplama"
-        name="Arabuluculuk Ücret Hesaplama"
-        nameContent="Kolay, anlaşılır, basit, sade arabuluculuk ücret hesaplama aracı"
+        descriptionContent="Kolay, anlaşılır, basit, sade arabuluculuk ücret hesaplama aracı"
+        keywordsContent="arabuluculuk ücreti hesaplama aracı, arabulucu ücret hesapla"
       />
       <PageTemplate content={<UcretHesaplamaPanel />} />
     </>

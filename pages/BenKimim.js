@@ -22,8 +22,8 @@ export default function BenKimim() {
     <>
       <MetaPanel
         title="Öznur İlhan Karabulut"
-        name="Öznur İlhan Karabulut"
-        nameContent="Öznur İlhan Karabulut Hakkında Bilgiler"
+        descriptionContent="Öznur İlhan Karabulut Hakkında Bilgiler"
+        keywordsContent="arabulucu ve avukat öznur ilhan karabulut"
       />
       <PageTemplate content={<PageContentBenKimim />} />
     </>

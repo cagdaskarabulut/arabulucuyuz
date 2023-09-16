@@ -9,9 +9,9 @@ export default function UcretHesaplama() {
   return (
     <>
       <MetaPanel
-        title="Arabulucuyuz.org"
-        name="Arabulucu ve Avukat"
-        nameContent="Arabuluculuk ve İcra Hukuku Konularında Uzman"
+        title="Duyurular"
+        descriptionContent="Arabuluculuk ve İcra Hukuku Konularında Güncel Duyurular"
+        isDontFollowByRobots={true}
       />
       <PageTemplate content={<PageContentDuyurular />} />
     </>
