@@ -7,9 +7,9 @@ export default function Sorular() {
   return (
     <>
       <MetaPanel
-        name="Arabuluculuk ve Avukatlık hakkında sorular"
-        descriptionContent="Arabuluculuk ve Avukatlık hakkında sorular ve cevaplarını içermektedir"
-        keywordsContent="arabuluculuk avukatlık soru cevap "
+        name="Arabuluculuk Hakkında Sorular"
+        descriptionContent="Arabuluculuk hakkında sorular ve cevaplarını içermektedir"
+        keywordsContent="Arabuluculuk sorular, arabuluculuk cevaplar, Avukatlık Sorular, Avukatlık Cevaplar "
       />
       <PageTemplate content={<SorularPanel />} />
     </>

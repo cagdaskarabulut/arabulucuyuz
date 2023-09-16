@@ -18,9 +18,9 @@ export default function Hizmetler() {
   return (
     <>
       <MetaPanel
-        title="Hizmetlerimiz"
-        descriptionContent="Arabuluculuk ve İcra Hukuku Konularında Uzman"
-        keywordsContent="iş hukukunda arabulucusu, ticari hukukunda arabuluculuk, tüketici hukukunda arabuluculuk, kira hukukunda arabuluculuk"
+        title="Arabuluculuk Hizmetlerimiz"
+        descriptionContent="Arabuluculuk Hizmetlerimiz"
+        keywordsContent="hizmetlerimiz, arabuluculuk Hizmetlerimiz, iş hukukunda arabulucusu, ticari hukukunda arabuluculuk, tüketici hukukunda arabuluculuk, kira hukukunda arabuluculuk"
       />
       <PageTemplate content={<PageContentHizmetler />} />
     </>

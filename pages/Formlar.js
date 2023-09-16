@@ -8,9 +8,9 @@ export default function UcretHesaplama() {
   return (
     <>
       <MetaPanel
-        title="Formlar"
+        title="Arabuluculuk Formları"
         descriptionContent="Arabuluculuk ve İcra Hukuku Konularında Uzman"
-        keywordsContent="arabuluculuk formları"
+        keywordsContent="Arabuluculuk ve İcra Hukuku Konularında Güncel Formlar"
         isDontFollowByRobots={true}
       />
       <PageTemplate content={<PageContentFormlar />} />

@@ -9,7 +9,7 @@ export default function UcretHesaplama() {
   return (
     <>
       <MetaPanel
-        title="Duyurular"
+        title="Arabuluculuk Duyuruları"
         descriptionContent="Arabuluculuk ve İcra Hukuku Konularında Güncel Duyurular"
         isDontFollowByRobots={true}
       />
