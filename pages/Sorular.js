@@ -7,7 +7,7 @@ export default function Sorular() {
   return (
     <>
       <MetaPanel
-        name="Arabuluculuk Hakkında Sorular"
+        title="Arabuluculuk Hakkında Sorular"
         descriptionContent="Arabuluculuk hakkında sorular ve cevaplarını içermektedir"
         keywordsContent="Arabuluculuk sorular, arabuluculuk cevaplar, Avukatlık Sorular, Avukatlık Cevaplar "
       />
