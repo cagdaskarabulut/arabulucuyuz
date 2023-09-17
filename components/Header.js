@@ -18,18 +18,6 @@ const Header = ({}) => {
     );
   }
 
-  // function handlePhoneClick() {
-  //   window.location.href = "tel://" + "0090";
-  // }
-
-  // function handleInstagramClick() {
-  //   window.location.href = "https://www.instagram.com/";
-  // }
-
-  // function handleWhatsappClick() {
-  //   window.open("https://api.whatsapp.com/send?phone=0090", "_blank");
-  // }
-
   return (
     <Container className={styles.header}>
       <Grid
@@ -42,13 +30,6 @@ const Header = ({}) => {
         <Grid item xs={16}>
           <h1 className={styles.logoStyle}><a style={{textDecoration:"none",color:"inherit"}} href="/Arabuluculuk">Arabulucuyuz.org</a></h1>
         </Grid>
-        {/* <Grid item xs={2}>
-          <Chip style={{float: 'right'}}
-            icon={<LocalPhoneIcon />}
-            label="Telefon"
-            onClick={handlePhoneClick}
-          />
-        </Grid> */}
         <Grid item xs={2}>
           <Chip
             style={{ float: "right" }}
@@ -57,20 +38,6 @@ const Header = ({}) => {
             onClick={handleEmailClick}
           />
         </Grid>
-        {/* <Grid item xs={2}>
-          <Chip style={{float: 'right'}}
-            icon={<InstagramIcon />}
-            label="Instagram"
-            onClick={handleInstagramClick}
-          />
-        </Grid>
-        <Grid item xs={2}>
-          <Chip style={{float: 'right'}}
-            icon={<WhatsAppIcon />}
-            label="Whatsapp"
-            onClick={handleWhatsappClick}
-          />
-        </Grid> */}
         <Grid item xs={2}>
           <Chip
             style={{ float: "right" }}

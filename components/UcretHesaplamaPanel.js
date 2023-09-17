@@ -34,13 +34,6 @@ export default function UcretHesaplamaPanel() {
     setArabulucuyaOdenecekMiktar("0");
   };
 
-  // const handleAnlasilanUcretChange = (
-  //   event: React.ChangeEvent<HTMLInputElement>
-  // ) => {
-  //   setAnlasilanUcret(event.target.value as string);
-  //   setArabulucuyaOdenecekMiktar("0");
-  // };
-
   const handleAnlasilanUcretFocus = (
     event
   ) => {
@@ -306,7 +299,6 @@ export default function UcretHesaplamaPanel() {
             variant="standard"
               value={anlasilanUcret}
               currencySymbol="TL"
-              // decimalPlaces="2"
               decimalCharacter=","
               digitGroupSeparator="."
               onChange={(event, value)=> setAnlasilanUcret(value)}
@@ -325,7 +317,6 @@ export default function UcretHesaplamaPanel() {
           <Grid item xs={12}>
             <br />
             <br />
-            {/* {(!isNaN(+arabulucuyaOdenecekMiktar) ? Number(arabulucuyaOdenecekMiktar) : 0) > 0 && ( */}
             <div
             className={styles.arabulucuyaOdenecekMiktarStyle}
               style={{
@@ -340,7 +331,6 @@ export default function UcretHesaplamaPanel() {
                 {arabulucuyaOdenecekMiktar}
               </b>
             </div>
-            {/* )} */}
           </Grid>
         </Grid>
     </div>

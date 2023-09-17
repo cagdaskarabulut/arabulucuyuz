@@ -2,21 +2,15 @@ import React, { Component } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Grid } from "@mui/material";
 import QuestionAnswerIcon from "@mui/icons-material/QuestionAnswer";
+import MyGrid from "./tools/MyGrid";
 
 export default class SorularPanel extends Component {
   render() {
-    return (
-      <div>
-        <Grid
-          spacing={2}
-          container
-          direction="row"
-          justifyContent="start"
-          alignItems="start"
-          columns={16}
-        >
-          <Grid item xs={8}>
-            <p style={{marginTop:"0px"}}>
+
+    const LeftContent = () => {
+      return (
+        <>
+          <p style={{marginTop:"0px"}}>
               <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
               <b>ARABULUCULUĞA ELVERİŞLİ ALANLAR NELERDİR?</b><br />
               Tarafların üzerinde serbestçe tasarruf edebildikleri her özel
@@ -41,9 +35,14 @@ export default class SorularPanel extends Component {
               amacıyla arabuluculuk sürecini idare eden ve arabuluculuk
               yöntemlerini bilip uygulayabilen tarafsız gerçek kişidir.
             </p>
-          </Grid>
-          <Grid item xs={8}>
-            <p style={{marginTop:"0px"}}>
+        </>
+      );
+    };
+  
+    const RightContent = () => {
+      return (
+        <>
+          <p style={{marginTop:"0px"}}>
               <QuestionAnswerIcon style={{fontSize:"16px",paddingRight:"5px"}}/>
               <b>ARABULUCU İLE AVUKAT ARASINDAKİ FARKLAR NELERDİR?</b> <br />
               Avukat, hukuki ilişkilerin düzenlenmesi ve hukuki uyuşmazlıkların
@@ -72,8 +71,13 @@ export default class SorularPanel extends Component {
               birlikte imzaladığı arabuluculuk anlaşma belgeleri mahkemeden şerh
               alınmasına gerek olmadan, mahkeme kararı gibi icraya konulabilir.
             </p>
-          </Grid>
-        </Grid>
+        </>
+      );
+    };
+
+    return (
+      <div>
+        <MyGrid leftContent={<LeftContent/>} rightContent={<RightContent/>} />
       </div>
     );
   }

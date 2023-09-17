@@ -4,6 +4,7 @@ import React from "react";
 import { useCallback, useContext, useEffect, useState } from "react";
 import useWindowSize from "@rooks/use-window-size";
 import { MOBILE_SCREEN_SIZE } from "../constants/GeneralConstants";
+import MyGrid from "./tools/MyGrid";
 
 // import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 // import EmailIcon from "@mui/icons-material/Email";
@@ -23,36 +24,53 @@ const FooterPanel = () => {
     }
   }, [innerWidth]);
 
+  const LeftContent = () => {
+    return (
+      <>
+        <div className={styles.footerContentStyle}>
+          © Copyright 2023 Arabulucuyuz.org.
+          {isMobile ? " " : <br />}
+          Tüm Hakları Saklıdır.
+          {isMobile ? " " : <br />}
+          Tasarım Karabulut Yazılım.
+        </div>
+      </>
+    );
+  };
+
+  const RightContent = () => {
+    return (
+      <>
+        <div className={styles.footerContentStyle}>
+          Bu sitede paylaşılan bilgiler yalnızca bilgilendirme amaçlı olup,
+          Türkiye Cumhuriyeti Barolar Birliği’nin ilgili düzenlemeleri
+          uyarınca reklam, teklif, hukuki öneri veya danışmanlık teşkil etmez.
+          Sitede sunulan bilgiler hakkında Arabulucuyuz.org sitesi sorumluluk
+          kabul etmez. Bu sitede paylaşılan bilgiler, ve sair veriler
+          Arabulucuyuz.org'a ait olup, büronun yazılı izni olmaksızın
+          kullananlar hakkında yasal işlem yapılır.
+        </div>
+      </>
+    );
+  };
+
   return (
     <div className={styles.footerStyle}>
-      <Grid
+      <MyGrid leftContent={<LeftContent />} rightContent={<RightContent />} contentPosition="center" />
+      {/* <Grid
         container
-        columns={12}
+        columns={16}
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={isMobile ? 12 : 6}>
-          <div className={styles.footerContentStyle}>
-            © Copyright 2023 Arabulucuyuz.org.
-            {isMobile ? " " : <br />}
-            Tüm Hakları Saklıdır.
-            {isMobile ? " " : <br />}
-            Tasarım Karabulut Yazılım.
-          </div>
+        <Grid item xs={isMobile ? 16 : 8}>
+          
         </Grid>
-        <Grid item xs={isMobile ? 12 : 6}>
-          <div className={styles.footerContentStyle}>
-            Bu sitede paylaşılan bilgiler yalnızca bilgilendirme amaçlı olup,
-            Türkiye Cumhuriyeti Barolar Birliği’nin ilgili düzenlemeleri
-            uyarınca reklam, teklif, hukuki öneri veya danışmanlık teşkil etmez.
-            Sitede sunulan bilgiler hakkında Arabulucuyuz.org sitesi sorumluluk
-            kabul etmez. Bu sitede paylaşılan bilgiler, ve sair veriler
-            Arabulucuyuz.org'a ait olup, büronun yazılı izni olmaksızın
-            kullananlar hakkında yasal işlem yapılır.
-          </div>
+        <Grid item xs={isMobile ? 16 : 8}>
+          
         </Grid>
-      </Grid>
+      </Grid> */}
     </div>
   );
 };

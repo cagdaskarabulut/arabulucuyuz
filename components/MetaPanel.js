@@ -68,7 +68,7 @@ const MetaPanel = ({
       {isDontFollowByRobots && (<meta name="robots" content="noindex,nofollow" />)}
       {!isDontFollowByRobots && (<meta name="robots" content="index,follow" />)}
 
-      {(imagePath != null && imagePath != "") && (<meta property="og:image" content={imageFullPathUrl} itemprop="image" />)}
+      {(imagePath != null && imagePath != "") && (<meta property="og:image" content={imageFullPathUrl} itemProp="image" />)}
       {(imageAlt != null && imageAlt != "") && (<meta property="og:image:alt" content={imageAlt} />)}
       <link rel="icon" href={iconHref} />
 
@@ -82,8 +82,8 @@ const MetaPanel = ({
       <meta name="doc-class" content="Published" />
       <meta name="doc-rights" content="Public" />
       <meta property="og:type" content="website" />
-      <meta http-equiv="Copyright" content="Copyright 2023 Arabulucuyuz.org" />
-      <meta http-equiv="Reply-to" content="oznurilhankarabulut@gmail.com" />
+      <meta httpEquiv="Copyright" content="Copyright 2023 Arabulucuyuz.org" />
+      <meta httpEquiv="Reply-to" content="oznurilhankarabulut@gmail.com" />
       <meta name="mobile-web-app-capable" content="yes" />
       
       
