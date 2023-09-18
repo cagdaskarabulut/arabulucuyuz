@@ -7,8 +7,8 @@ export default function Arabuluculuk() {
   return (
     <>
       <MetaPanel
-        title="Arabuluculuk"
-        descriptionContent="Arabuluculuk ve İcra Hukuku Konularında Uzman"
+        title="Arabuluculuk nedir?"
+        descriptionContent="Arabuluculuk nedir sorusuna detaylı açıklama içermektedir."
         keywordsContent="arabuluculuk, arabulucuyuz, arabulucu, arabulucu nasıl bulurum, iyi bir arabulucu arıyorum, iyi bir avukat arıyorum"
         imagePath="/images/Arabulucu.jpg"
         imageAlt="Arabulucu"

@@ -5,7 +5,7 @@ import { MOBILE_SCREEN_SIZE } from "../../constants/GeneralConstants";
 
 //- Tek kolon varsa sadece "leftContent" girilir.
 //- Kolon tam ekran olacaksa  "isOneFullContent: true" yapılır. Bu seçim yapılmazsa normalde ekranın yarısını kaplarken mobilde tamamını kaplar.
-//- ContentPosition default değeri start
+//- ContentPosition default değeri start, örneğin footer da center gönderilir
 const MyGrid = ({ leftContent, rightContent, isOneFullContent, contentPosition }) => {
   //_ MobilePart
   const { innerWidth } = useWindowSize();
