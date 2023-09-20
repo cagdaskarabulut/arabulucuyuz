@@ -1,16 +1,31 @@
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
-import SendIcon from '@mui/icons-material/Send';
+import SendIcon from "@mui/icons-material/Send";
+import MyGrid from "@/components/tools/MyGrid";
+import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
 export default function Hizmetler() {
   const PageContentHizmetler = () => {
     return (
       <div>
-        <SendIcon style={{fontSize:"12px"}}/> İŞÇİ İŞVEREN UYUŞMAZLIKLARINDA ARABULUCULUK<br/><br/>
-        <SendIcon style={{fontSize:"12px"}}/> TİCARİ UYUŞMAZLIKLARDA ARABULUCULUK<br/><br/>
-        <SendIcon style={{fontSize:"12px"}}/> TÜKETİCİ UYUŞMAZLIKLARINDA ARABULUCULUK<br/><br/>
-        <SendIcon style={{fontSize:"12px"}}/> TARIMSAL ÜRETİM SÖZLEŞMESİNDEN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK<br/><br/>
-        <SendIcon style={{fontSize:"12px"}}/> KİRA HUKUKU ANLAŞMAZLIKLARINDAN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK 
+        <SendIcon style={{ fontSize: "12px" }} /> İŞÇİ İŞVEREN UYUŞMAZLIKLARINDA
+        ARABULUCULUK
+        <br />
+        <br />
+        <SendIcon style={{ fontSize: "12px" }} /> TİCARİ UYUŞMAZLIKLARDA
+        ARABULUCULUK
+        <br />
+        <br />
+        <SendIcon style={{ fontSize: "12px" }} /> TÜKETİCİ UYUŞMAZLIKLARINDA
+        ARABULUCULUK
+        <br />
+        <br />
+        <SendIcon style={{ fontSize: "12px" }} /> TARIMSAL ÜRETİM SÖZLEŞMESİNDEN
+        KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK
+        <br />
+        <br />
+        <SendIcon style={{ fontSize: "12px" }} /> KİRA HUKUKU
+        ANLAŞMAZLIKLARINDAN KAYNAKLI UYUŞMAZLIKLARDA ARABULUCULUK
       </div>
     );
   };
@@ -22,7 +37,22 @@ export default function Hizmetler() {
         descriptionContent="Arabuluculuk Hizmetlerimiz"
         keywordsContent="hizmetlerimiz, arabuluculuk Hizmetlerimiz, iş hukukunda arabulucusu, ticari hukukunda arabuluculuk, tüketici hukukunda arabuluculuk, kira hukukunda arabuluculuk"
       />
-      <PageTemplate content={<PageContentHizmetler />} />
+      <PageTemplate
+        content={
+          <MyGrid
+            breadcrumbs={
+              <MyBreadcrumbs
+                link1Title="Hizmetler"
+                link1Href="/Hizmetler"
+                activePageNumber="1"
+              />
+            }
+            title="Arabuluculuk Hizmetlerimiz"
+            leftContent={<PageContentHizmetler />}
+            isOneFullContent={true}
+          />
+        }
+      />
     </>
   );
 }

@@ -1,9 +1,11 @@
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
+import MyGrid from "@/components/tools/MyGrid";
+import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
 export default function UcretHesaplama() {
   const PageContentFormlar = () => {
-    return <p style={{marginTop:"0px"}}>Formlar</p>;
+    return <p style={{ marginTop: "0px" }}>Formlar</p>;
   };
   return (
     <>
@@ -13,7 +15,22 @@ export default function UcretHesaplama() {
         keywordsContent="Arabuluculuk ve İcra Hukuku Konularında Güncel Formlar"
         isDontFollowByRobots={true}
       />
-      <PageTemplate content={<PageContentFormlar />} />
+      <PageTemplate
+        content={
+          <MyGrid
+            breadcrumbs={
+              <MyBreadcrumbs
+                link1Title="Formlar"
+                link1Href="/Formlar"
+                activePageNumber="1"
+              />
+            }
+            title="Arabuluculuk Formları"
+            leftContent={<PageContentFormlar />}
+            isOneFullContent={true}
+          />
+        }
+      />
     </>
   );
 }

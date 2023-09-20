@@ -12,6 +12,7 @@
 
   @include tablet-or-less {
     width: 100% !important;
+    margin-bottom: 30px !important;
   }
 }
 
@@ -42,4 +43,11 @@
     color: white !important;
     background-color: $green-hover !important;
   }
+}
+
+.logoStyle {
+  color: $font;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 5px;
 }

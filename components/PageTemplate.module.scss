@@ -41,6 +41,7 @@
   flex: 1;
   background-color: white;
   padding: 30px;
+  padding-top: 5px;
 
   @include tablet-or-less {
     padding: 10px;

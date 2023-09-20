@@ -1,7 +1,6 @@
 import React, { ChangeEvent } from "react";
 import styles from "./UcretHesaplamaPanel.module.scss";
 import CurrencyTextField from "@unicef/material-ui-currency-textfield";
-
 import {
   Button,
   Grid,
@@ -11,6 +10,7 @@ import {
   TextField,
 } from "@mui/material";
 import { useEffect, useState } from "react";
+import MyBreadcrumbs from "./tools/MyBreadcrumbs";
 
 export default function UcretHesaplamaPanel() {
   const [tip, setTip] = useState("1");
@@ -211,6 +211,8 @@ export default function UcretHesaplamaPanel() {
 
   return (
     <div>
+        <MyBreadcrumbs link1Title="UcretHesaplama" link1Href="/UcretHesaplama" activePageNumber="1"/>
+        <h1 className={styles.logoStyle}>Arabuluculuk Ücret Hesaplama</h1>
         <Grid item xs={20} columns={12}>
           <Grid item xs={12}>
             <span style={{ fontWeight: "bold" }}>Uyuşmazlık Tipi</span>

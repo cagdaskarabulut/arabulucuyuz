@@ -1,11 +1,13 @@
+import MyGrid from "@/components/tools/MyGrid";
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
+import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
 export default function BenKimim() {
   const PageContentBenKimim = () => {
     return (
       <div>
-        <p style={{marginTop:"0px"}}>
+        <p style={{ marginTop: "0px" }}>
           <b>AV. ARB. ÖZNUR İLHAN KARABULUT</b>
         </p>
         <p>
@@ -25,7 +27,22 @@ export default function BenKimim() {
         descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut Hakkında Bilgiler"
         keywordsContent="arabulucu, avukat, öznur ilhan karabulut"
       />
-      <PageTemplate content={<PageContentBenKimim />} />
+      <PageTemplate
+        content={
+          <MyGrid
+            breadcrumbs={
+              <MyBreadcrumbs
+                link1Title="Ben Kimim"
+                link1Href="/BenKimim"
+                activePageNumber="1"
+              />
+            }
+            title="Ben Kimim ?"
+            leftContent={<PageContentBenKimim />}
+            isOneFullContent={true}
+          />
+        }
+      />
     </>
   );
 }

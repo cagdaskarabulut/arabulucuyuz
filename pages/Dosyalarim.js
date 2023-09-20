@@ -1,9 +1,11 @@
 import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
+import MyGrid from "@/components/tools/MyGrid";
+import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
 export default function UcretHesaplama() {
   const PageContentDosyalarim = () => {
-    return <p style={{marginTop:"0px"}}>Dosyalarim</p>;
+    return <p style={{ marginTop: "0px" }}>Dosyalarim</p>;
   };
 
   return (
@@ -13,7 +15,22 @@ export default function UcretHesaplama() {
         descriptionContent="Kendi Arabuluculuk Dosyalarım"
         isDontFollowByRobots={true}
       />
-      <PageTemplate content={<PageContentDosyalarim />} />
+      <PageTemplate
+        content={
+          <MyGrid
+            breadcrumbs={
+              <MyBreadcrumbs
+                link1Title="Dosyalarım"
+                link1Href="/Dosyalarim"
+                activePageNumber="1"
+              />
+            }
+            title="Arabuluculuk Dosyalarım"
+            leftContent={<PageContentDosyalarim />}
+            isOneFullContent={true}
+          />
+        }
+      />
     </>
   );
 }

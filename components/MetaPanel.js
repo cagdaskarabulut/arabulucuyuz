@@ -86,7 +86,6 @@ const MetaPanel = ({
       <meta httpEquiv="Reply-to" content="oznurilhankarabulut@gmail.com" />
       <meta name="mobile-web-app-capable" content="yes" />
       
-      
     </Head>
   );
 };

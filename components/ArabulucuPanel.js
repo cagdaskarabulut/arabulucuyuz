@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import MyGrid from "./tools/MyGrid";
+import MyBreadcrumbs from "./tools/MyBreadcrumbs";
 
 export default function ArabulucuPanel() {
-
   const LeftContent = () => {
     return (
       <>
@@ -109,7 +109,13 @@ export default function ArabulucuPanel() {
 
   return (
     <div>
-      <MyGrid leftContent={<LeftContent />} rightContent={<RightContent />} />
+      
+      <MyGrid
+        breadcrumbs={<MyBreadcrumbs link1Title="Arabuluculuk" link1Href="/Arabuluculuk" activePageNumber="1"/>}
+        title="Arabuluculuk nedir?"
+        leftContent={<LeftContent />}
+        rightContent={<RightContent />}
+      />
     </div>
   );
 }
