@@ -31,7 +31,7 @@ const MyGrid = ({
   return (
     <div>
       {breadcrumbs}
-      {title != "" && <h1 className={styles.logoStyle}>{title}</h1>}
+      {title != "" && <h1 className={styles.titleStyle}>{title}</h1>}
       <Grid
         spacing={2}
         container
