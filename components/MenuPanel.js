@@ -49,8 +49,8 @@ export default function Menu() {
         className={router.pathname == "/Duyurular" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Duyurular
         </Button> */}
-        <Button href={"/BenKimim"} 
-        className={router.pathname == "/BenKimim" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+        <Button href={"/Arabulucu"} 
+        className={router.pathname == "/Arabulucu" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Ben kimim
         </Button>
         {/* <Button href={"/Dosyalarim"} 

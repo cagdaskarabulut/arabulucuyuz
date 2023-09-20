@@ -3,7 +3,7 @@ import MetaPanel from "../components/MetaPanel";
 import PageTemplate from "@/components/PageTemplate";
 import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
-export default function BenKimim() {
+export default function Arabulucu() {
   const PageContentBenKimim = () => {
     return (
       <div>
@@ -33,7 +33,7 @@ export default function BenKimim() {
             breadcrumbs={
               <MyBreadcrumbs
                 link1Title="Ben Kimim"
-                link1Href="/BenKimim"
+                link1Href="/Arabulucu"
                 activePageNumber="1"
               />
             }

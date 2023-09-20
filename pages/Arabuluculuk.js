@@ -8,8 +8,8 @@ export default function Arabuluculuk() {
     <>
       <MetaPanel
         title="Arabuluculuk nedir?"
-        descriptionContent="Arabuluculuk nedir sorusuna detaylı açıklama içermektedir."
-        keywordsContent="arabuluculuk, arabulucuyuz, arabulucu, arabulucu nasıl bulurum, iyi bir arabulucu arıyorum, iyi bir avukat arıyorum"
+        descriptionContent="Arabulucu ve Arabuluculuk nedir sorularına detaylı açıklama içermektedir."
+        keywordsContent="arabuluculuk, arabulucuyuz, arabulucu, arabulucu nasıl bulurum, iyi bir arabulucu arıyorum, iyi bir avukat arıyorum, arabulucu bul"
         imagePath="/images/Arabulucu.jpg"
         imageAlt="Arabulucu"
       />

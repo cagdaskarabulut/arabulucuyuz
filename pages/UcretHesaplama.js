@@ -7,9 +7,9 @@ export default function UcretHesaplama() {
   return (
     <>
       <MetaPanel
-        title="Arabuluculuk Ücret Hesaplama"
+        title="Arabulucu Ücret Hesaplama"
         descriptionContent="Kolay, anlaşılır, basit, sade arabuluculuk ücret hesaplama aracı"
-        keywordsContent="arabuluculuk ücreti hesaplama aracı, arabulucu ücret hesapla"
+        keywordsContent="arabulucu ücret hesapla, arabuluculuk ücreti hesaplama aracı, arabulucu ücret hesapla"
       />
       <PageTemplate content={<UcretHesaplamaPanel />} />
     </>
