@@ -112,6 +112,12 @@ function MenuPanelMobile() {
               >
                 <Typography textAlign="center">BenKimim</Typography>
               </MenuItem>
+              <MenuItem
+                key="iletisim"
+                onClick={() => handleNavMenu("iletisim")}
+              >
+                <Typography textAlign="center">iletişim</Typography>
+              </MenuItem>
             </Menu>
           </Box>
 

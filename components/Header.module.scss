@@ -3,13 +3,24 @@
 @import "../styles/globals.scss";
 
 .header {
-  background-color: white;
-  align-items: center;
+  background-color: white !important;
+  align-items: center !important;
   max-width: 100% !important;
-  align-items: flex-start;
-  display: inline-grid;
+  align-items: flex-start !important;
+  display: inline-grid !important;
+
+  :global {
+    .MuiGrid-container {
+      justify-content: space-between !important;
+    }
+  }
+  
   .menuButton{
-      color: $font;
+      color: $font !important;
+  }
+
+  .floatRightStyle{
+    float: right !important;
   }
 }
 

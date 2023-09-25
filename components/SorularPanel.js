@@ -69,7 +69,7 @@ export default class SorularPanel extends Component {
             <QuestionAnswerIcon
               style={{ fontSize: "16px", paddingRight: "5px" }}
             />
-            <b>ARABULUCU İLE AVUKAT ARASINDAKİ FARKLAR NELERDİR?</b> <br />
+            <b>ARABULUCULUK ANLAŞMA BELGESİNİN HUKUKİ NİTELİĞİ NEDİR?</b> <br />
             Taraflar arabuluculuk sürecinin sonunda bir anlaşmaya varırlarsa bu
             anlaşma taraflar için bağlayıcı olmaktadır. Anlaşmanın icra
             edilebilirliğine ilişkin şerh verilmesi, Sulh Hukuk Mahkemesinden

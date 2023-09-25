@@ -11,14 +11,16 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import MyBreadcrumbs from "./tools/MyBreadcrumbs";
+import MyResultMessage from "./tools/MyResultMessage";
 
 export default function UcretHesaplamaPanel() {
   const [tip, setTip] = useState("1");
   const [arabulucuSayisi, setArabulucuSayisi] = useState("1");
   const [tarafSayisi, setTarafSayisi] = useState("2");
   const [anlasilanUcret, setAnlasilanUcret] = useState(0);
-  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] = useState("0");
-  
+  const [arabulucuyaOdenecekMiktar, setArabulucuyaOdenecekMiktar] =
+    useState("0");
+
   const handleChange = (event) => {
     setTip(event.target.value);
     setArabulucuyaOdenecekMiktar("0");
@@ -34,11 +36,13 @@ export default function UcretHesaplamaPanel() {
     setArabulucuyaOdenecekMiktar("0");
   };
 
-  const handleAnlasilanUcretFocus = (
-    event
-  ) => {
-    if (anlasilanUcret == 0){
-      setAnlasilanUcret(0);
+  const handleAnlasilanUcretChange = (event, value) => {
+    setAnlasilanUcret(value);
+  };
+
+  const handleAnlasilanUcretFocus = (event) => {
+    if (anlasilanUcret == 0) {
+      setAnlasilanUcret("");
     }
     setArabulucuyaOdenecekMiktar("0");
   };
@@ -126,9 +130,12 @@ export default function UcretHesaplamaPanel() {
       return 0;
     }
   };
-  
-  const addCommas = (num) =>
-  num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+  const replacePreviousDotsToCommaThenputDotForEvery3Digits = (num) => {
+    let newnum = num.toString().replace(".", ",");
+    let result = newnum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    return result;
+  };
 
   const handleHesapla = () => {
     // setArabulucuyaOdenecekMiktar('0');
@@ -180,161 +187,152 @@ export default function UcretHesaplamaPanel() {
           sonuc = 2160;
         }
       }
-
-      // sonuc.toString().replace(",", ".");
-      console.log(addCommas(parseFloat(sonuc.toFixed(2))));
-
-      setArabulucuyaOdenecekMiktar(addCommas(parseFloat(sonuc.toFixed(2))));
-
-      // console.log("tip" + tip);
-      // console.log("arabulucuSayisi" + arabulucuSayisi);
-      // console.log("tarafSayisi" + tarafSayisi);
-      // console.log("anlasilanUcret" + anlasilanUcret);
-      // console.log("sonuc" + sonuc);
+      setArabulucuyaOdenecekMiktar(
+        replacePreviousDotsToCommaThenputDotForEvery3Digits(
+          parseFloat(sonuc.toFixed(2))
+        )
+      );
     }
   };
 
   useEffect(() => {
     const keyDownHandler = (event) => {
       // console.log('User pressed: ', event.key);
-      if (event.key === 'Enter') {
+      if (event.key === "Enter") {
         setArabulucuyaOdenecekMiktar("0");
         event.preventDefault();
         handleHesapla();
       }
     };
-    document.addEventListener('keydown', keyDownHandler);
+    document.addEventListener("keydown", keyDownHandler);
     return () => {
-      document.removeEventListener('keydown', keyDownHandler);
+      document.removeEventListener("keydown", keyDownHandler);
     };
   });
 
   return (
     <div>
-        <MyBreadcrumbs link1Title="UcretHesaplama" link1Href="/UcretHesaplama" activePageNumber="1"/>
-        <h2 className={styles.titleStyle}>Arabuluculuk Ücret Hesaplama</h2>
-        <Grid item xs={20} columns={12}>
-          <Grid item xs={12}>
-            <span style={{ fontWeight: "bold" }}>Uyuşmazlık Tipi</span>
-          </Grid>
-          <Grid item xs={12}>
-            <Select
-              id="tipId"
-              value={tip}
-              label="Tip"
-              onChange={handleChange}
-              variant="standard"
-              className={styles.tipMenu}
-            >
-              <MenuItem value={1} className={styles.tipMenu}>
-                İş Hukuku Uyuşmazlıkları 2023
-              </MenuItem>
-              <MenuItem value={2} className={styles.tipMenu}>
-                Ticari Uyuşmazlıklar 2023
-              </MenuItem>
-              <MenuItem value={3} className={styles.tipMenu}>
-                Tüketici Uyuşmazlıklar 2023
-              </MenuItem>
-              <MenuItem value={4} className={styles.tipMenu}>
-                Diğer Uyuşmazlıklar 2023
-              </MenuItem>
-            </Select>
-          </Grid>
-          <br />
-          <br />
-          <Grid item xs={12}>
-            <span style={{ fontWeight: "bold" }}>Arabulucu Sayısı</span>
-          </Grid>
-          <Grid item xs={12}>
-            <Select
-              id="arabulucuSayisiId"
-              value={arabulucuSayisi}
-              label="arabulucuSayisi"
-              onChange={handleArabulucuSayisiChange}
-              variant="standard"
-              className={styles.tipMenu}
-            >
-              <MenuItem value={1} className={styles.tipMenu}>
-                Bir Arabulucu
-              </MenuItem>
-              <MenuItem value={2} className={styles.tipMenu}>
-                Birden Fazla Arabulucu
-              </MenuItem>
-            </Select>
-          </Grid>
-          <br />
-          <br />
-          <Grid item xs={12}>
-            <span style={{ fontWeight: "bold" }}>Taraf Sayısı</span>
-          </Grid>
-          <Grid item xs={12}>
-            <Select
-              id="tarafSayisiId"
-              value={tarafSayisi}
-              label="tarafSayisi"
-              onChange={handleTarafSayisiChange}
-              variant="standard"
-              className={styles.tipMenu}
-            >
-              <MenuItem value={2} className={styles.tipMenu}>
-                2 Taraflı
-              </MenuItem>
-              <MenuItem value={3} className={styles.tipMenu}>
-                3-5 Taraflı
-              </MenuItem>
-              <MenuItem value={6} className={styles.tipMenu}>
-                6-10 Taraflı
-              </MenuItem>
-              <MenuItem value={11} className={styles.tipMenu}>
-                11 ve Üstü
-              </MenuItem>
-            </Select>
-          </Grid>
-          <br />
-          <br />
-          <Grid item xs={12}>
-            <span style={{ fontWeight: "bold" }}>Anlaşmaya Varılan Ücret</span>
-          </Grid>
-          <Grid item xs={12}>
-            <CurrencyTextField
+      <MyBreadcrumbs
+        link1Title="UcretHesaplama"
+        link1Href="/UcretHesaplama"
+        activePageNumber="1"
+      />
+      <h2 className={styles.titleStyle}>Arabuluculuk Ücret Hesaplama</h2>
+      <Grid item xs={20} columns={12}>
+        <Grid item xs={12}>
+          <span style={{ fontWeight: "bold" }}>Uyuşmazlık Tipi</span>
+        </Grid>
+        <Grid item xs={12}>
+          <Select
+            id="tipId"
+            value={tip}
+            label="Tip"
+            onChange={handleChange}
+            variant="standard"
+            className={styles.tipMenu}
+          >
+            <MenuItem value={1} className={styles.tipMenuOnlyFont}>
+              İş Hukuku Uyuşmazlıkları 2023
+            </MenuItem>
+            <MenuItem value={2} className={styles.tipMenuOnlyFont}>
+              Ticari Uyuşmazlıklar 2023
+            </MenuItem>
+            <MenuItem value={3} className={styles.tipMenuOnlyFont}>
+              Tüketici Uyuşmazlıklar 2023
+            </MenuItem>
+            <MenuItem value={4} className={styles.tipMenuOnlyFont}>
+              Diğer Uyuşmazlıklar 2023
+            </MenuItem>
+          </Select>
+        </Grid>
+        <br />
+        <br />
+        <Grid item xs={12}>
+          <span style={{ fontWeight: "bold" }}>Arabulucu Sayısı</span>
+        </Grid>
+        <Grid item xs={12}>
+          <Select
+            id="arabulucuSayisiId"
+            value={arabulucuSayisi}
+            label="arabulucuSayisi"
+            onChange={handleArabulucuSayisiChange}
+            variant="standard"
+            className={styles.tipMenu}
+          >
+            <MenuItem value={1} className={styles.tipMenuOnlyFont}>
+              Bir Arabulucu
+            </MenuItem>
+            <MenuItem value={2} className={styles.tipMenuOnlyFont}>
+              Birden Fazla Arabulucu
+            </MenuItem>
+          </Select>
+        </Grid>
+        <br />
+        <br />
+        <Grid item xs={12}>
+          <span style={{ fontWeight: "bold" }}>Taraf Sayısı</span>
+        </Grid>
+        <Grid item xs={12}>
+          <Select
+            id="tarafSayisiId"
+            value={tarafSayisi}
+            label="tarafSayisi"
+            onChange={handleTarafSayisiChange}
+            variant="standard"
+            className={styles.tipMenu}
+          >
+            <MenuItem value={2} className={styles.tipMenuOnlyFont}>
+              2 Taraflı
+            </MenuItem>
+            <MenuItem value={3} className={styles.tipMenuOnlyFont}>
+              3-5 Taraflı
+            </MenuItem>
+            <MenuItem value={6} className={styles.tipMenuOnlyFont}>
+              6-10 Taraflı
+            </MenuItem>
+            <MenuItem value={11} className={styles.tipMenuOnlyFont}>
+              11 ve Üstü
+            </MenuItem>
+          </Select>
+        </Grid>
+        <br />
+        <br />
+        <Grid item xs={12}>
+          <span style={{ fontWeight: "bold" }}>Anlaşmaya Varılan Ücret</span>
+        </Grid>
+        <Grid item xs={12}>
+          <CurrencyTextField
             className={styles.tipMenu}
             variant="standard"
-              value={anlasilanUcret}
-              currencySymbol="TL"
-              decimalCharacter=","
-              digitGroupSeparator="."
-              onChange={(event, value)=> setAnlasilanUcret(value)}
-              onFocus={handleAnlasilanUcretFocus}
-              placeholder="100.000,50"
-              selectOnFocus={false}
-            />
-          </Grid>
-          <br />
-          <br />
-          <Grid item xs={12}>
-            <Button onClick={handleHesapla} className={styles.pageButtonStyle}>
-              Hesapla
-            </Button>
-          </Grid>
-          <Grid item xs={12}>
-            <br />
-            <br />
-            <div
-            className={styles.arabulucuyaOdenecekMiktarStyle}
-              style={{
-                display:
-                  arabulucuyaOdenecekMiktar!='0'
-                    ? ""
-                    : "none",
-              }}
-            >
-              Arabulucuya Ödenecek Miktar :
-              <b style={{ color: "#27ae60", marginLeft:"5px" }}>
-                {arabulucuyaOdenecekMiktar}
-              </b>
-            </div>
-          </Grid>
+            value={anlasilanUcret}
+            currencySymbol="TL"
+            decimalCharacter=","
+            digitGroupSeparator="."
+            onChange={handleAnlasilanUcretChange}
+            onFocus={handleAnlasilanUcretFocus}
+            placeholder="100.000,50"
+            selectOnFocus={false}
+          />
         </Grid>
+        <br />
+        <br />
+        <Grid item xs={12}>
+          <Button onClick={handleHesapla} className={styles.pageButtonStyle}>
+            Hesapla
+          </Button>
+        </Grid>
+        <Grid item xs={12}>
+          <br />
+          <br />
+          <MyResultMessage
+            isVisible={arabulucuyaOdenecekMiktar != "0" ? "" : "none"}
+            leftContent="Arabulucuya Ödenecek Miktar :"
+            leftContentStyle={styles.arabulucuyaOdenecekMiktarStyle}
+            rightContent={arabulucuyaOdenecekMiktar}
+            rightContentStyle={{ color: "#27ae60", marginLeft: "5px" }}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 }

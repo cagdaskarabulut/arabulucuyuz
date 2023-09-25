@@ -109,7 +109,6 @@ export default function ArabulucuPanel() {
 
   return (
     <div>
-      
       <MyGrid
         breadcrumbs={<MyBreadcrumbs link1Title="Arabuluculuk" link1Href="/Arabuluculuk" activePageNumber="1"/>}
         title="Arabuluculuk nedir?"

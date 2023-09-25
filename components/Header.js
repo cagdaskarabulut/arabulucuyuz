@@ -22,25 +22,27 @@ const Header = ({}) => {
     <Container className={styles.header}>
       <Grid
         container
-        columns={20}
+        columns={12}
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item xs={16}>
+        <Grid item xs={10}>
           <h1 className={styles.logoStyle}><a style={{textDecoration:"none",color:"inherit"}} href="/Arabuluculuk">Arabulucuyuz.org</a></h1>
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
           <Chip
-            style={{ float: "right" }}
+            // style={{ float: "right" }}
+            className={styles.floatRightStyle}
             icon={<EmailIcon />}
             label="E-Posta"
             onClick={handleEmailClick}
           />
         </Grid>
-        <Grid item xs={2}>
+        <Grid item xs={1}>
           <Chip
-            style={{ float: "right" }}
+            // style={{ float: "right" }}
+            className={styles.floatRightStyle}
             icon={<LocationOnIcon />}
             label="Adres"
             onClick={handleLocationClick}

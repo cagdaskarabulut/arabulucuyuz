@@ -3,7 +3,7 @@ import PageTemplate from "@/components/PageTemplate";
 import MyGrid from "@/components/tools/MyGrid";
 import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
-export default function UcretHesaplama() {
+export default function Dosyalarim() {
   const PageContentDosyalarim = () => {
     return <p style={{ marginTop: "0px" }}>Dosyalarim</p>;
   };

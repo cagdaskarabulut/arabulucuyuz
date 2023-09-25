@@ -3,7 +3,7 @@ import PageTemplate from "@/components/PageTemplate";
 import MyGrid from "@/components/tools/MyGrid";
 import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 
-export default function UcretHesaplama() {
+export default function Duyurular() {
   const PageContentDuyurular = () => {
     return <p style={{ marginTop: "0px" }}>Duyurular</p>;
   };

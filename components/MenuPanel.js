@@ -16,7 +16,7 @@ export default function Menu() {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-between !important" ,
           marginTop: 2,
           marginBottom: 2,
           marginLeft: 10,
@@ -45,22 +45,14 @@ export default function Menu() {
         className={router.pathname == "/UcretHesaplama" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Ücret hesaplama
         </Button>
-        {/* <Button href={"/Duyurular"} 
-        className={router.pathname == "/Duyurular" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
-          Duyurular
-        </Button> */}
         <Button href={"/Arabulucu"} 
         className={router.pathname == "/Arabulucu" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Ben kimim
         </Button>
-        {/* <Button href={"/Dosyalarim"} 
-        className={router.pathname == "/Dosyalarim" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
-          Dosyalarım
+        <Button href={"/iletisim"} 
+        className={router.pathname == "/iletisim" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+          İletişim
         </Button>
-        <Button href={"/Formlar"} 
-        className={router.pathname == "/Formlar" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
-          Formlar
-        </Button> */}
       </Box>
     </Container>
   );
