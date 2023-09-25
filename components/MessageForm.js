@@ -8,7 +8,7 @@ import styles from "./MessageForm.module.scss";
 import classNames from "classnames";
 
 const MessageForm = () => {
-  const _buttonClassName = classNames(styles.pageButtonStyle, "MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium UcretHesaplamaPanel_pageButtonStyle__goFug css-1e6y48t-MuiButtonBase-root-MuiButton-root");
+  const _buttonClassName = classNames(styles.pageButtonStyle);
   const [message, setMessage] = useState({
     name: "",
     email: "",
