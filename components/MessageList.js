@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from
 
 const MessageList = () => {
   const [messages, setMessages] = useState([]);
+  const timestamp = Date.now(); // This would be the timestamp you want to format
 
   useEffect(()=>{
     const collectionRef = collection(db,"Messages");
@@ -43,7 +44,9 @@ const MessageList = () => {
                 </TableCell>
                 <TableCell align="right">{row.email}</TableCell>
                 <TableCell align="right">{row.phoneNumber}</TableCell>
-                <TableCell align="right">{row.creationDate}</TableCell>
+                <TableCell align="right">
+                {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp)}
+                </TableCell>
                 <TableCell align="right">{row.content}</TableCell>
               </TableRow>
             ))}
