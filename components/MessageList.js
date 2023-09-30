@@ -23,14 +23,14 @@ const MessageList = () => {
     <div>
 
 <TableContainer >
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>İsim</TableCell>
+            <TableCell>Not</TableCell>
+            <TableCell align="right">İsim</TableCell>
             <TableCell align="right">Email</TableCell>
             <TableCell align="right">Telefon</TableCell>
             <TableCell align="right">Yaratılma Tarihi</TableCell>
-            <TableCell align="right">Not</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -39,7 +39,8 @@ const MessageList = () => {
                 key={row.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell component="th" scope="row">
+                <TableCell component="th" scope="row">{row.content}</TableCell>
+                <TableCell align="right">
                 {row.name}
                 </TableCell>
                 <TableCell align="right">{row.email}</TableCell>
@@ -47,7 +48,6 @@ const MessageList = () => {
                 <TableCell align="right">
                 {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp)}
                 </TableCell>
-                <TableCell align="right">{row.content}</TableCell>
               </TableRow>
             ))}
         </TableBody>
