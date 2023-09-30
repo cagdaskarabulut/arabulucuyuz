@@ -1,11 +1,11 @@
-import React from 'react';
-import MessageList from '../components/MessageList';
+import React, { useEffect, useState } from "react";
 
 const AdminPanel = () => {
   return (
-    // <MessageList/>
-    <></>
-  )
+    <div>
+      Admin Panel
+    </div>
+  );
 };
 
 export default AdminPanel;

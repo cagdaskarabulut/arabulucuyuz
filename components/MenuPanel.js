@@ -27,8 +27,8 @@ export default function Menu() {
           },
         }}
       >
-        <Button href={"/Arabuluculuk"} 
-        className={(router.pathname == "/" || router.pathname == "/Arabuluculuk")  ? styles.menuButtonStyleSelected : styles.menuButtonStyle}
+        <Button href={"/"} 
+        className={(router.pathname == "/" || router.pathname == "/")  ? styles.menuButtonStyleSelected : styles.menuButtonStyle}
         >
           Arabuluculuk
         </Button>

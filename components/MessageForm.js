@@ -23,7 +23,7 @@ const MessageForm = () => {
     setIsRequiredFieldsError(false);
     if (
       message.name == "" ||
-      message.email == "" ||
+      message.phoneNumber == "" ||
       message.content == "" ||
       !validateEmail(message.email)
     ) {
@@ -52,117 +52,121 @@ const MessageForm = () => {
 
   return (
     <>
-        <Grid item xs={12} className={styles.iletisimFormStyle}>
-          <TextField
-            required
-            variant="standard"
-            className={styles.tipMenu}
-            fullWidth
-            label="Ad Soyad"
-            value={message.name}
-            onChange={(e) => setMessage({ ...message, name: e.target.value })}
-            error={
-              isRequiredFieldsError && message.name.length < 1 ? true : false
-            }
-            helperText={
-              isRequiredFieldsError && message.name.length < 1
-                ? "Zorunlu alan"
-                : ""
-            }
-          />
-        </Grid>
-        <br />
-        <br />
-        <Grid item xs={12}>
-          <TextField
-            required
-            type="email"
-            variant="standard"
-            className={styles.tipMenu}
-            fullWidth
-            label="Email"
-            value={message.email}
-            onChange={(e) => setMessage({ ...message, email: e.target.value })}
-            error={
-              (isRequiredFieldsError && message.email.length < 1) ||
-              !validateEmail(message.email)
-                ? true
-                : false
-            }
-            helperText={
-              isRequiredFieldsError && message.email.length < 1
-                ? "Zorunlu alan"
-                : message.email.length > 0 && !validateEmail(message.email)
-                ? "Geçersiz email formatı"
-                : ""
-            }
-          />
-        </Grid>
-        <br />
-        <br />
-        <Grid item xs={12}>
-          <InputMask
-            mask="(0999) 999 99 99"
-            value={message.phoneNumber}
-            disabled={false}
-            maskChar=" "
-            onChange={(e) =>
-              setMessage({ ...message, phoneNumber: e.target.value })
-            }
-          >
-            {() => (
-              <TextField
-                fullWidth
-                className={styles.tipMenu}
-                variant="standard"
-                label="Telefon"
-              />
-            )}
-          </InputMask>
-        </Grid>
-        <br />
-        <br />
-        <Grid item xs={12}>
-          <TextField
-            required
-            minRows={4}
-            variant="filled"
-            className={styles.tipMenu}
-            fullWidth
-            label="Mesaj"
-            multiline
-            maxRows={4}
-            value={message.content}
-            onChange={(e) =>
-              setMessage({ ...message, content: e.target.value })
-            }
-            error={
-              isRequiredFieldsError && message.content.length < 1 ? true : false
-            }
-            helperText={
-              isRequiredFieldsError && message.content.length < 1
-                ? "Zorunlu alan"
-                : ""
-            }
-          />
-        </Grid>
-        <br />
-        <br />
-        <Grid item xs={12}>
-          <button onClick={onSubmit} 
-          className={_buttonClassName}>
-            Mesajı Gönder
-          </button>
-        </Grid>
-        <br />
-        <br />
-        <Grid item xs={12}>
-          <MyResultMessage
-            isVisible={successMessage != "" ? "" : "none"}
-            leftContent={successMessage}
-            leftContentStyle={styles.successMessageStyle}
-          />
-        </Grid>
+      <Grid item xs={12} className={styles.iletisimFormStyle}>
+        <TextField
+          required
+          variant="standard"
+          className={styles.tipMenu}
+          fullWidth
+          label="Ad Soyad"
+          value={message.name}
+          onChange={(e) => setMessage({ ...message, name: e.target.value })}
+          error={
+            isRequiredFieldsError && message.name.length < 1 ? true : false
+          }
+          helperText={
+            isRequiredFieldsError && message.name.length < 1
+              ? "Zorunlu alan"
+              : ""
+          }
+        />
+      </Grid>
+      <br />
+      <br />
+      <Grid item xs={12}>
+        <TextField
+          type="email"
+          variant="standard"
+          className={styles.tipMenu}
+          fullWidth
+          label="Email"
+          value={message.email}
+          onChange={(e) => setMessage({ ...message, email: e.target.value })}
+          error={
+            message.email.length > 1 && !validateEmail(message.email)
+              ? true
+              : false
+          }
+          helperText={
+            message.email.length > 0 && !validateEmail(message.email)
+              ? "Geçersiz email formatı"
+              : ""
+          }
+        />
+      </Grid>
+      <br />
+      <br />
+      <Grid item xs={12}>
+        <InputMask
+          mask="(0999) 999 99 99"
+          value={message.phoneNumber}
+          disabled={false}
+          maskChar=" "
+          onChange={(e) =>
+            setMessage({ ...message, phoneNumber: e.target.value })
+          }
+        >
+          {() => (
+            <TextField
+              required
+              fullWidth
+              className={styles.tipMenu}
+              variant="standard"
+              label="Telefon"
+              error={
+                isRequiredFieldsError && message.phoneNumber.length < 1
+                  ? true
+                  : false
+              }
+              helperText={
+                isRequiredFieldsError && message.phoneNumber.length < 1
+                  ? "Zorunlu alan"
+                  : ""
+              }
+            />
+          )}
+        </InputMask>
+      </Grid>
+      <br />
+      <br />
+      <Grid item xs={12}>
+        <TextField
+          required
+          minRows={4}
+          variant="filled"
+          className={styles.tipMenu}
+          fullWidth
+          label="Mesaj"
+          multiline
+          maxRows={4}
+          value={message.content}
+          onChange={(e) => setMessage({ ...message, content: e.target.value })}
+          error={
+            isRequiredFieldsError && message.content.length < 1 ? true : false
+          }
+          helperText={
+            isRequiredFieldsError && message.content.length < 1
+              ? "Zorunlu alan"
+              : ""
+          }
+        />
+      </Grid>
+      <br />
+      <br />
+      <Grid item xs={12}>
+        <button onClick={onSubmit} className={_buttonClassName}>
+          Mesajı Gönder
+        </button>
+      </Grid>
+      <br />
+      <br />
+      <Grid item xs={12}>
+        <MyResultMessage
+          isVisible={successMessage != "" ? "" : "none"}
+          leftContent={successMessage}
+          leftContentStyle={styles.successMessageStyle}
+        />
+      </Grid>
     </>
   );
 };
