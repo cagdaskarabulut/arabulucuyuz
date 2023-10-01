@@ -18,7 +18,7 @@ function MenuPanelMobile() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const router = useRouter();
   function handleEmailClick() {
-    window.location.href = "mailto:" + "oznurilhankarabulut@gmail.com";
+    window.location.href = "mailto:" + "oznurilhan@windowslive.com";
   }
 
   function handleLocationClick() {

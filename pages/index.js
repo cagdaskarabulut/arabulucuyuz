@@ -1,5 +1,5 @@
 import MetaPanel from "@/components/MetaPanel";
-import ArabulucuPanel from "@/components/ArabulucuPanel";
+import ArabuluculukPanel from "@/components/ArabuluculukPanel";
 import PageTemplate from "@/components/PageTemplate";
 
 //- Açılış sayfası
@@ -13,7 +13,7 @@ export default function Home() {
         imagePath="/images/Arabulucu.jpg"
         imageAlt="Arabulucu"
       />
-      <PageTemplate content={<ArabulucuPanel />} />
+      <PageTemplate content={<ArabuluculukPanel />} />
     </>
   );
 }

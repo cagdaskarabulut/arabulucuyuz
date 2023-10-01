@@ -83,9 +83,8 @@ const MetaPanel = ({
       <meta name="doc-rights" content="Public" />
       <meta property="og:type" content="website" />
       <meta httpEquiv="Copyright" content="Copyright 2023 Arabulucuyuz.org" />
-      <meta httpEquiv="Reply-to" content="oznurilhankarabulut@gmail.com" />
+      <meta httpEquiv="Reply-to" content="oznurilhan@windowslive.com" />
       <meta name="mobile-web-app-capable" content="yes" />
-      
     </Head>
   );
 };

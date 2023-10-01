@@ -9,7 +9,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 const Header = ({}) => {
   function handleEmailClick() {
-    window.location.href = "mailto:" + "oznurilhankarabulut@gmail.com";
+    window.location.href = "mailto:" + "oznurilhan@windowslive.com";
   }
 
   function handleLocationClick() {
