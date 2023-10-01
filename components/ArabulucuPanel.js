@@ -12,7 +12,7 @@ export default function ArabulucuPanel() {
       <div className={styles.profileImageContainer}>
         <Image
         className={styles.profileImage}
-          src="/images/Adsiz.png"
+          src="/images/Avukat Arabulucu Öznur İlhan Karabulut.png"
           width={0}
           height={0}
           sizes="100vw"
