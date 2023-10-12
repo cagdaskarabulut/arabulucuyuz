@@ -12,7 +12,7 @@ export default function Arabulucu() {
         keywordsContent="arabulucu, avukat, öznur ilhan karabulut"
       />
       <PageTemplate
-        content={<ArabulucuPanel/>}
+        content={<ArabulucuPanel/> }   
       />
     </>
   );
