@@ -28,7 +28,7 @@ const Header = ({}) => {
         alignItems="center"
       >
         <Grid item xs={10}>
-          <h1 className={styles.logoStyle}><a style={{textDecoration:"none",color:"inherit"}} href="/">Arabulucuyuz.org</a></h1>
+          <h1 className={styles.logoStyle}><a style={{textDecoration:"none",color:"inherit"}} href="/">Arabulucu.info</a></h1>
         </Grid>
         <Grid item xs={1}>
           <Chip

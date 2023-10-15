@@ -28,7 +28,7 @@ const FooterPanel = () => {
     return (
       <>
         <div className={styles.footerContentStyle}>
-          © Copyright 2023 Arabulucuyuz.org.
+          © Copyright 2023 Arabulucu.info.
           {isMobile ? " " : <br />}
           Tüm Hakları Saklıdır.
           {isMobile ? " " : <br />}
@@ -45,9 +45,9 @@ const FooterPanel = () => {
           Bu sitede paylaşılan bilgiler yalnızca bilgilendirme amaçlı olup,
           Türkiye Cumhuriyeti Barolar Birliği’nin ilgili düzenlemeleri
           uyarınca reklam, teklif, hukuki öneri veya danışmanlık teşkil etmez.
-          Sitede sunulan bilgiler hakkında Arabulucuyuz.org sitesi sorumluluk
+          Sitede sunulan bilgiler hakkında Arabulucu.info sitesi sorumluluk
           kabul etmez. Bu sitede paylaşılan bilgiler, ve sair veriler
-          Arabulucuyuz.org'a ait olup, büronun yazılı izni olmaksızın
+          Arabulucu.info'a ait olup, büronun yazılı izni olmaksızın
           kullananlar hakkında yasal işlem yapılır.
         </div>
       </>
@@ -57,20 +57,6 @@ const FooterPanel = () => {
   return (
     <div className={styles.footerStyle}>
       <MyGrid leftContent={<LeftContent />} rightContent={<RightContent />} contentPosition="center" />
-      {/* <Grid
-        container
-        columns={16}
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Grid item xs={isMobile ? 16 : 8}>
-          
-        </Grid>
-        <Grid item xs={isMobile ? 16 : 8}>
-          
-        </Grid>
-      </Grid> */}
     </div>
   );
 };
