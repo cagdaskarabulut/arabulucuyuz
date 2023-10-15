@@ -9,7 +9,7 @@ export default function Arabulucu() {
       <MetaPanel
         title="Avukat Arabulucu Öznur İlhan Karabulut"
         descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut Hakkında Bilgiler"
-        keywordsContent="arabulucu, avukat, öznur ilhan karabulut"
+        keywordsContent="arabulucu, avukat, öznur ilhan karabulut, arabuluculuk, arabulucuyuz, arabulucu, arabulucu nasıl bulurum, iyi bir arabulucu arıyorum, iyi bir avukat arıyorum, arabulucu bul, arabulucu ile anlaş, arabulucu tut"
       />
       <PageTemplate
         content={<ArabulucuPanel/> }   
