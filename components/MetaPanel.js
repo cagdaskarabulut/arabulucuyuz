@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { Component } from "react";
 import { useRouter } from "next/router";
+import Script from "next/script";
 
 //- Google için meta sayfası
 const MetaPanel = ({
@@ -73,7 +74,7 @@ const MetaPanel = ({
       <link rel="icon" href={iconHref} />
 
       {/* <meta name="google-site-verification" content="ZqEtWJqvbP4hrjZXAHOhtMDausn70UMrPIHHIMQORDk" /> */}
-      <meta name="google-site-verification" content="6JOWgDHfQfJC2ZD04ojSM73RiLsFdtCeej4o0SfCKlU" />
+      <meta name="google-site-verification" content="qyZ2knyOwT01LZa9eZwbeETyiK-XmBhEU4Bxl8ao2l4" />
       <meta name="yandex-verification" content="482b1df21423a716" />
       <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1,maximum-scale=1" />
       <meta name="Language" content="tr" />
@@ -86,6 +87,19 @@ const MetaPanel = ({
       <meta httpEquiv="Copyright" content="Copyright 2023 Arabulucu.info" />
       <meta httpEquiv="Reply-to" content="oznurilhan@windowslive.com" />
       <meta name="mobile-web-app-capable" content="yes" />
+      
+      <Script id="google-analytics">
+        {`
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ 
+          ga('create', 'UA-XXXXX-Y', 'auto');
+          ga('send', 'pageview');
+        `}
+      </Script>
+
     </Head>
   );
 };
