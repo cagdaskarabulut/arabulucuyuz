@@ -7,9 +7,9 @@ export default function UcretHesaplama() {
   return (
     <>
       <MetaPanel
-        title="Arabulucu Ücret Hesaplama"
-        descriptionContent="Kolay, anlaşılır, basit, sade arabuluculuk ücret hesaplama aracı"
-        keywordsContent="arabulucu ücret hesapla, arabuluculuk ücreti hesaplama aracı, arabulucu ücret hesapla"
+        title="Arabuluculuk Ücret Hesaplamaları - Avukat Arabulucu Öznur İlhan Karabulut"
+        descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut'un arabuluculuk ücret hesaplamaları sayfası. Arabuluculuk hizmetlerinin maliyetini hesaplamak için kullanabileceğiniz araçlar ve bilgiler. Hukuki sorunlarınıza çözüm bulmak için bize başvurun. (Kolay, anlaşılır, basit, sade arabuluculuk ücret hesaplama aracı)"
+        keywordsContent="Arabulucu Ücret Hesapla, Arabuluculuk Ücreti Hesaplama Aracı, Arabulucu Ücret Hesapla, Arabuluculuk, Ücret Hesaplamaları, Arabuluculuk Maliyeti, Arabulucu Avukat, Hukuki Hizmetler, Hukuki Danışmanlık, Hukuk Destek, Hukuki Çözüm"
       />
       <PageTemplate content={<UcretHesaplamaPanel />} />
     </>

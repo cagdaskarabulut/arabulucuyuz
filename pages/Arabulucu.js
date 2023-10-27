@@ -7,12 +7,12 @@ export default function Arabulucu() {
   return (
     <>
       <MetaPanel
-        title="Avukat Arabulucu Öznur İlhan Karabulut"
-        descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut Hakkında Bilgiler"
-        keywordsContent="arabulucu, avukat, öznur ilhan karabulut, arabuluculuk, arabulucuyuz, arabulucu, arabulucu nasıl bulurum, iyi bir arabulucu arıyorum, iyi bir avukat arıyorum, arabulucu bul, arabulucu ile anlaş, arabulucu tut"
+        title="Avukat Arabulucu Öznur İlhan Karabulut - Hakkımda"
+        descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut, hukuki alanda geniş deneyime sahip bir profesyoneldir. Avukatlık kariyeri boyunca pek çok dava çözmüş ve arabuluculuk konusunda uzmanlaşmıştır. Kendisi hakkında daha fazla bilgi edinin ve hukuki sorunlarınıza çözüm bulmak için bize başvurun."
+        keywordsContent="Avukat, Arabulucu, Hukuki Danışman, Uzmanlık Alanları, Hukuk Danışmanlığı, Hukuki Destek, Deneyimli Hukukçu, Avukat Özgeçmişi, Hakkımda, Öznur İlhan Karabulut, Arabuluculuk, Arabulucu Nasıl Bulurum, İyi Bir Arabulucu Arıyorum, İyi Bir Avukat Arıyorum, Arabulucu Bul, Arabulucu İle Anlaş, Arabulucu Tut"
       />
       <PageTemplate
-        content={<ArabulucuPanel/> }   
+        content={<ArabulucuPanel/> }
       />
     </>
   );

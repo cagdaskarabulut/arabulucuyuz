@@ -32,9 +32,9 @@ export default function iletisim() {
   return (
     <>
       <MetaPanel
-        title="Arabuluculu ile iletişim"
-        descriptionContent="Arabuluculu ile iletişime geç, soru sor, teklif al"
-        keywordsContent="arabuluculu ile iletişime geç, arabulucuya soru sor, arabulucudan teklif al, arabulucu ile görüş"
+        title="Avukat Arabulucu Öznur İlhan Karabulut - İletişim"
+        descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut ile iletişime geçmek için bu sayfayı kullanın. Deneyimli hukukçu ve arabulucu olan Öznur İlhan Karabulut'a hukuki sorunlarınızı iletebilirsiniz. İhtiyacınıza yönelik hukuki destek almak için bize ulaşın."
+        keywordsContent="Avukat, Arabulucu, İletişim, Hukuki Destek, İletişim Bilgileri, Hukuk Danışmanlığı,Arabuluculuk Danışmanlığı, Uzman Arabulucu, Hukuk Danışman, Hukuki İletişim, Hukukçu"
       />
       <PageTemplate content={<MessagePanel/>} />
     </>

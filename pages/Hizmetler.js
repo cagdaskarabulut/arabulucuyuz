@@ -33,9 +33,9 @@ export default function Hizmetler() {
   return (
     <>
       <MetaPanel
-        title="Arabuluculuk Hizmetlerimiz"
-        descriptionContent="Arabuluculuk Hizmetlerimiz"
-        keywordsContent="hizmetlerimiz, arabuluculuk Hizmetlerimiz, iş hukukunda arabulucusu, ticari hukukunda arabuluculuk, tüketici hukukunda arabuluculuk, kira hukukunda arabuluculuk"
+        title="Öznur İlhan Karabulut - Uzman Arabulucu ve Avukat - Hizmetlerimiz"
+        descriptionContent="Avukat Arabulucu Öznur İlhan Karabulut, işçi-işveren uyuşmazlıkları, ticari uyuşmazlıklar, tüketici uyuşmazlıkları, tarımsal üretim sözleşmesi anlaşmazlıkları ve kira hukuku anlaşmazlıkları konularında uzmanlaşmış bir hukukçu ve arabulucudur. Deneyimimizle hukuki sorunlarınıza çözüm sunuyoruz."
+        keywordsContent="Uzman Arabulucu, Avukat, İşçi-İşveren Uyuşmazlıkları, Ticari Uyuşmazlıklar, Tüketici Uyuşmazlıkları, Tarımsal Üretim Sözleşmesi, Kira Hukuku Anlaşmazlıkları, Hukuki Danışmanlık, Hukuk Destek, Hukuk Danışmanı"
       />
       <PageTemplate
         content={
