@@ -21,6 +21,7 @@
     "@rooks/use-window-size": "^4.11.2",
     "@types/react-dom": "18.2.7",
     "@unicef/material-ui-currency-textfield": "^0.8.6",
+    "@vercel/analytics": "^1.1.1",
     "cookie": "^0.5.0",
     "cookies-next": "^4.0.0",
     "eslint": "8.47.0",
