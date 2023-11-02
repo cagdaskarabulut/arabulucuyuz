@@ -22,7 +22,7 @@ export default function ArabuluculukPanel() {
   const RightContent = () => {
     return (
       <>
-        <p style={{ marginTop: "0px" }}>
+        <p style={{ marginTop: "0px", textAlign: "justify" }}>
           Arabuluculuk, üçüncü kişinin tarafları bir araya getirerek müzakere
           edebilmelerini sağladığı ve aralarındaki iletişimi kolaylaştırdığı,
           çözüme ilişkin karar verme yetkisinin taraflarda kaldığı, sürece
@@ -42,67 +42,21 @@ export default function ArabuluculukPanel() {
           </i>{" "}
           olarak tanımlanmaktadır.
         </p>
-        <p>
+        <p style={{ marginTop: "0px", textAlign: "justify" }}>
           Arabuluculuk, elverişli her uyuşmazlık için kullanılabilecek bir
-          uyuşmazlık çözüm yöntemidir. Ancak arabuluculuğa elverişli
-          uyuşmazlıklar içinde bazılarında arabuluculuğa başvurmak ve olumlu
-          sonuç almak diğerlerine göre daha kolay olabilir. Bu hâller şunlardır:
+          uyuşmazlık çözüm yöntemidir. Özellikle taraflar arasında birden fazla
+          uyuşmazlık konusu varsa, görünen uyuşmazlığın ardında bambaşka bir
+          sorun varsa, tarafların uyuşmazlık konusundan başkaca da ilişkileri
+          varsa; hızlı, ekonomik, gizli, kalıcı, dostane bir çözüm isteniyorsa
+          arabuluculuk taraflar için en ideal yoldur denilirse yanlış ifade
+          edilmiş olmaz.
         </p>
-        <ul>
-          <li>
-            Taraflar arasındaki görünen uyuşmazlığın ötesinde daha büyük
-            çatışma, menfaat veya sorunlar varsa,
-          </li>
-          <li>
-            Taraflar arasında korunmaya değer uzun süreli bir (ticari, ailevi
-            nitelikte, komşuluk hukuku ile ilgili, kişisel veya uzun süreli
-            sözleşme şeklinde bir) ilişki varsa,
-          </li>
-          <li>
-            Uyuşmazlığın görünen tarafları dışında başkaca tarafları da varsa,
-          </li>
-          <li>Taraflar arasında birden çok uyuşmazlık varsa,</li>
-
-          <li>
-            Taraflar uyuşmazlığın hızlı bir şekilde çözülmesini istiyorlarsa,
-          </li>
-          <li>
-            Taraflar yargılamanın uzun sürmesi sebebi ile daha hızlı çözüm elde
-            etmek istiyor ise,
-          </li>
-          <li>
-            Uyuşmazlığın yargısal yolla çözümü uyuşmazlığın değerine göre çok
-            masraflı olacaksa,
-          </li>
-          <li>
-            Uyuşmazlık konusunun yargısal yolla çözümü fazla karmaşık ise,
-          </li>
-          <li>
-            Uyuşmazlığın yargı kararıyla çözümü hâlinde kararın icrası zor
-            olacak veya mümkün olmayacak ise,
-          </li>
-          <li>
-            Tarafların uyuşmazlığın dostane çözümünde karşılıklı çıkarları
-            varsa,
-          </li>
-          <li>
-            Taraflar, uyuşmazlık konusunda gizliliğin korunmasını istiyor ise
-            veya
-          </li>
-          <li>Taraflar arasında uzun süreli kalıcı bir çözüm isteniyor ise.</li>
-        </ul>
-        Arabuluculuğun birçok olumlu yanı olup bunlar aşağıda sıralanmıştır.
-        Arabuluculuğun olumu yanları:
-        <ul>
-          <li>
-            {" "}
-            Menfaat ve İhtiyaç Odaklı Karşılıklı Kabul Edilmiş Bir Çözüm Olması
-          </li>
-          <li>Zamandan ve Masraftan Tasarruf</li>
-          <li>Kontrolün Taraflarda Olması</li>
-          <li>Gizlilik</li>
-          <li>Dava Yükünün Azaltılması</li>
-        </ul>
+        <p style={{ marginTop: "0px", textAlign: "justify" }}>
+          Yukarıda da değinildiği üzere arabuluculuğun olumlu yanları olarak ise
+          tarafların menfaatine ve ihtiyacına odaklı olması, hızlı ve ekonomik
+          olması, kontrolün taraflarda olması, gizli olması ve en nihayetinde
+          yargılama yükünü azaltıyor olması sayılmaktadır.
+        </p>
       </>
     );
   };
@@ -110,7 +64,13 @@ export default function ArabuluculukPanel() {
   return (
     <div>
       <MyGrid
-        breadcrumbs={<MyBreadcrumbs link1Title="Arabuluculuk" link1Href="/" activePageNumber="1"/>}
+        breadcrumbs={
+          <MyBreadcrumbs
+            link1Title="Arabuluculuk"
+            link1Href="/"
+            activePageNumber="1"
+          />
+        }
         title="Arabuluculuk nedir?"
         leftContent={<LeftContent />}
         rightContent={<RightContent />}

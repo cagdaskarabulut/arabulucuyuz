@@ -42,6 +42,28 @@ export default class SorularPanel extends Component {
             amacıyla arabuluculuk sürecini idare eden ve arabuluculuk
             yöntemlerini bilip uygulayabilen tarafsız gerçek kişidir.
           </p>
+          <p>
+            <QuestionAnswerIcon
+              style={{ fontSize: "16px", paddingRight: "5px" }}
+            />
+            <b>ARABULUCULUKTA ÜCRET KİM TARAFINDAN ÖDENİR?</b> <br />
+            Arabuluculuk ücreti 6325 sayılı Hukuki Uyuşmazlıklarında
+            Arabuluculuk Kanununa göre taraflarca aksi kararlaştırılmadıkça eşit
+            olarak ödenir. Ancak ücretin hangi tarafça ödeneceği ve ne kadar
+            olacağı müzakerelere başlanmadan önce taraflarca özel olarak da
+            belirlenebilir. Dava şartı arabuluculuklarda ise anlaşmama halinde
+            iki saatten az süren görüşmeler için Arabuluculuk ücreti yargılama
+            sonrası haksız çıkan veya arabuluculuk ilk toplantısına katılmayan
+            tarafa yükletilmek üzere Adalet Bakanlığı bütçesinden ödenir.
+          </p>
+          <p>
+            <QuestionAnswerIcon
+              style={{ fontSize: "16px", paddingRight: "5px" }}
+            />
+            <b>ARABULUCULUK TOPLANTISINA KATILMAM NE İFADE EDER?</b> <br />
+            Arabuluculuk toplantısına katılmanız sizin herhangi bir sonucu kabul
+            ettiğiniz veya bir anlaşmaya vardığınız anlamına gelmemektedir.
+          </p>
         </>
       );
     };
@@ -80,6 +102,30 @@ export default class SorularPanel extends Component {
             Tarafların ve avukatlarının birlikte imzaladığı arabuluculuk anlaşma
             belgeleri mahkemeden şerh alınmasına gerek olmadan, mahkeme kararı
             gibi icraya konulabilir.
+          </p>
+          <p>
+            <QuestionAnswerIcon
+              style={{ fontSize: "16px", paddingRight: "5px" }}
+            />
+            <b>ARABULUCULUKTA GİZLİLİK NE DEMEKTİR?</b> <br />
+            Tarafların, arabuluculuğa karşı güven duymasını sağlamak için
+            gizlilikleri koruma altına alınmıştır. Gizlilik, iç ilişkide
+            gizlilik ve dış ilişkide gizlilik olarak iki başlık altında da
+            incelenebilir. Dış ilişkide gizlilik, arabuluculuk sürecinin kural
+            olarak aleni olmamasını ve arabuluculuk sürecinde paylaşılan bilgi
+            ve belgelerin üçüncü kişiler huzurunda ifşa edilmemesi demektir. İç
+            ilişkide gizlilik ise aksi kararlaştırılmadıkça ve tarafın açık
+            muvafakatı olmadıkça, arabulucunun özel oturumlar esnasında
+            taraflardan birinden edindiği bilgiyi diğer tarafa aktaramayacak
+            olması demektir.
+          </p>
+          <p>
+            <QuestionAnswerIcon
+              style={{ fontSize: "16px", paddingRight: "5px" }}
+            />
+            <b>ARABULUCULUKTA GİZLİLİĞİN İSTİSNALARI NELERDİR?</b> <br />
+            Tarafların rızası ve arabuluculuk neticesinde varılan anlaşmanın
+            uygulanması ve icrasıdır.
           </p>
         </>
       );
