@@ -7,6 +7,7 @@ import useWindowSize from "@rooks/use-window-size";
 import FooterPanel from "@/components/FooterPanel";
 import MenuPanelMobile from "@/components/MenuPanelMobile";
 import { Analytics } from '@vercel/analytics/react';
+import Script from "next/script";
 
 //- Açılış sayfası , Hizmetlerimiz sayfası
 const PageTemplate = ({ content }) => {
@@ -40,6 +41,16 @@ const PageTemplate = ({ content }) => {
 
   return (
     <div className={styles.BodyStyle}>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-Z8RRE0MYX9" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', 'G-Z8RRE0MYX9');
+        `}
+      </Script>
       <div className={styles.HeaderStyle}>
         <HeaderField />
         <MenuField />
