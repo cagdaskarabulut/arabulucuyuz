@@ -101,8 +101,8 @@ function MenuPanelMobile() {
                 <Typography textAlign="center">Hizmetler</Typography>
               </MenuItem>
               <MenuItem
-                key="UcretHesaplama"
-                onClick={() => handleNavMenu("UcretHesaplama")}
+                key="Ucret-Hesaplama"
+                onClick={() => handleNavMenu("Ucret-Hesaplama")}
               >
                 <Typography textAlign="center">Ücret hesaplama</Typography>
               </MenuItem>

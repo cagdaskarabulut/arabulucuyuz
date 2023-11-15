@@ -213,8 +213,8 @@ export default function UcretHesaplamaPanel() {
   return (
     <div>
       <MyBreadcrumbs
-        link1Title="UcretHesaplama"
-        link1Href="/UcretHesaplama"
+        link1Title="Ucret-Hesaplama"
+        link1Href="/Ucret-Hesaplama"
         activePageNumber="1"
       />
       <h2 className={styles.titleStyle}>Arabuluculuk Ücret Hesaplama</h2>

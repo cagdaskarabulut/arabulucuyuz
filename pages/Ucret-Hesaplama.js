@@ -2,7 +2,7 @@ import MetaPanel from "../components/MetaPanel";
 import UcretHesaplamaPanel from "@/components/UcretHesaplamaPanel";
 import PageTemplate from "@/components/PageTemplate";
 
-//-UcretHesaplama sayfası
+//-Ucret-Hesaplama sayfası
 export default function UcretHesaplama() {
   return (
     <>

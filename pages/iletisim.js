@@ -11,7 +11,7 @@ import MyResultMessage from "@/components/tools/MyResultMessage";
 import InputMask from "react-input-mask";
 import classNames from "classnames";
 
-//-UcretHesaplama sayfası
+//-Ucret-Hesaplama sayfası
 export default function iletisim() {
 
   const MessagePanel = () => {

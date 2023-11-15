@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from "react";
-import MessageList from "../components/MessageList";
-import Router, { useRouter } from "next/router";
-import { useSearchParams } from "next/navigation";
-import delay from "next/dynamic";
+import React from "react";
+import { useRouter } from "next/router";
 
 const AdminPanelLogin = () => {
   const router = useRouter();

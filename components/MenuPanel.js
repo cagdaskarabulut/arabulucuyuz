@@ -41,8 +41,8 @@ export default function Menu() {
         className={router.pathname == "/Hizmetler" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Hizmetlerimiz
         </Button>
-        <Button href={"/UcretHesaplama"} 
-        className={router.pathname == "/UcretHesaplama" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
+        <Button href={"/Ucret-Hesaplama"} 
+        className={router.pathname == "/Ucret-Hesaplama" ? styles.menuButtonStyleSelected : styles.menuButtonStyle}>
           Ücret hesaplama
         </Button>
         <Button href={"/Arabulucu"} 
