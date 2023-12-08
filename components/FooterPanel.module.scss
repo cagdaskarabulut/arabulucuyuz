@@ -7,10 +7,18 @@
 
   .footerContentStyle {
     display: flex;
+    flex-wrap: nowrap;
     padding: 30px;
 
     @include tablet-or-less {
       padding: 10px;
+    }
+  }
+  @include desktop {
+    :global {
+      .MuiGrid-container {
+        flex-wrap: nowrap;
+      }
     }
   }
 }

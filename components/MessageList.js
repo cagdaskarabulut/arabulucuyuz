@@ -1,23 +1,36 @@
 // import { unsubscribe } from 'diagnostics_channel';
-import { collection, onSnapshot, orderBy, query } from '@firebase/firestore';
 import React, { useEffect, useState } from 'react'
-import { db } from '../firebase';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material';
 
 const MessageList = () => {
-  const [messages, setMessages] = useState([]);
+  const [data, setData] = useState(null);
+  const [isLoading, setLoading] = useState(true);
   const timestamp = Date.now(); // This would be the timestamp you want to format
 
-  useEffect(()=>{
-    const collectionRef = collection(db,"Messages");
+  // useEffect(()=>{
+  //   const collectionRef = collection(db,"Messages");
 
-    const q = query(collectionRef, orderBy("creationDate"));
+  //   const q = query(collectionRef, orderBy("creationDate"));
 
-    const unsubscribe = onSnapshot(q, (querySnapshot)  => {
-      setMessages(querySnapshot.docs.map(doc=>({...doc.data(), id: doc.id, creationDate: doc.data().creationDate?.toDate().getTime()})));
-    });
-    return unsubscribe;
-  },[]);
+  //   const unsubscribe = onSnapshot(q, (querySnapshot)  => {
+  //     setMessages(querySnapshot.docs.map(doc=>({...doc.data(), id: doc.id, creationDate: doc.data().creationDate?.toDate().getTime()})));
+  //   });
+  //   return unsubscribe;
+  // },[]);
+
+  useEffect(() => {
+    fetch("/api/message-list")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+        console.log(data);
+        console.log(data.message_arabulucu.rows);
+      });
+  }, []);
+
+  if (isLoading) return <p>Yükleniyor...</p>;
+  if (!data) return <p>Mesaj Listesi Boş</p>;
 
   return (
     <div>
@@ -34,17 +47,17 @@ const MessageList = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {messages.map((row) => (
+          {data.message_arabulucu.rows.map((item) => (
               <TableRow
-                key={row.id}
+                key={item.id}
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
-                <TableCell component="th" scope="row">{row.content}</TableCell>
+                <TableCell component="th" scope="row">{item.content}</TableCell>
                 <TableCell align="right">
-                {row.name}
+                {item.name}
                 </TableCell>
-                <TableCell align="right">{row.email}</TableCell>
-                <TableCell align="right">{row.phoneNumber}</TableCell>
+                <TableCell align="right">{item.email}</TableCell>
+                <TableCell align="right">{item.phonenumber}</TableCell>
                 <TableCell align="right">
                 {new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(timestamp)}
                 </TableCell>

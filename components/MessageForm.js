@@ -1,7 +1,6 @@
 import { Button, Grid, TextField } from "@material-ui/core";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import MyBreadcrumbs from "@/components/tools/MyBreadcrumbs";
 import React, { useEffect, useState } from "react";
-import { db } from "../firebase";
 import MyResultMessage from "./tools/MyResultMessage";
 import InputMask from "react-input-mask";
 import styles from "./MessageForm.module.scss";
@@ -12,7 +11,7 @@ const MessageForm = () => {
   const [message, setMessage] = useState({
     name: "",
     email: "",
-    phoneNumber: "",
+    phonenumber: "",
     content: "",
   });
   const [successMessage, setSuccessMessage] = useState("");
@@ -23,7 +22,7 @@ const MessageForm = () => {
     setIsRequiredFieldsError(false);
     if (
       message.name == "" ||
-      message.phoneNumber == "" ||
+      message.phonenumber == "" ||
       message.content == "" ||
       !validateEmail(message.email)
     ) {
@@ -31,13 +30,21 @@ const MessageForm = () => {
       return;
     }
 
-    const collectionRef = collection(db, "Messages");
-    const docRef = await addDoc(collectionRef, {
-      ...message,
-      creationDate: serverTimestamp(),
-    });
-    setMessage({ name: "", email: "", phoneNumber: "", content: "" });
-    setSuccessMessage("Mesajınız başarıyla gönderildi");
+    fetch("/api/message-add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name: message.name,
+        email: message.email,
+        phonenumber: message.phonenumber,
+        content: message.content,
+      }),
+    }) //message
+      .then((res) => res.json())
+      .then((data) => {
+        setMessage({ name: "", email: "", phonenumber: "", content: "" });
+        setSuccessMessage("Mesajınız başarıyla gönderildi");
+      });
   };
 
   const validateEmail = (email) => {
@@ -52,6 +59,13 @@ const MessageForm = () => {
 
   return (
     <>
+      <MyBreadcrumbs
+        link1Title="İletişim"
+        link1Href="/iletisim"
+        activePageNumber="1"
+      />
+      <h2 className={styles.titleStyle}>İletişim</h2>
+
       <Grid item xs={12} className={styles.iletisimFormStyle}>
         <TextField
           required
@@ -99,11 +113,11 @@ const MessageForm = () => {
       <Grid item xs={12}>
         <InputMask
           mask="(0999) 999 99 99"
-          value={message.phoneNumber}
+          value={message.phonenumber}
           disabled={false}
           maskChar=" "
           onChange={(e) =>
-            setMessage({ ...message, phoneNumber: e.target.value })
+            setMessage({ ...message, phonenumber: e.target.value })
           }
         >
           {() => (
@@ -114,12 +128,12 @@ const MessageForm = () => {
               variant="standard"
               label="Telefon"
               error={
-                isRequiredFieldsError && message.phoneNumber.length < 1
+                isRequiredFieldsError && message.phonenumber.length < 1
                   ? true
                   : false
               }
               helperText={
-                isRequiredFieldsError && message.phoneNumber.length < 1
+                isRequiredFieldsError && message.phonenumber.length < 1
                   ? "Zorunlu alan"
                   : ""
               }
