@@ -9,9 +9,6 @@ export default async function handler(request, response) {
     phonenumber= phonenumber.replace("(", "");
     phonenumber= phonenumber.replace(")", "");
     const content = request.body.content;
-
-    console.log(name, email, phonenumber, content);
-
     // if (!name || !email || !phonenumber || content) throw new Error('Message fields required');
     await sql`INSERT INTO message_arabulucu (name, email, phonenumber, content) VALUES (${name}, ${email}, ${phonenumber}, ${content});`;
     return response.status(200).json("successfully saved");
